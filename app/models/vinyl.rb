@@ -5,6 +5,5 @@ class Vinyl < ApplicationRecord
   validates :artist, presence: true
   validates :quality, presence: true
   validates :dimension, presence: true
-  validates :price_per_day, presence: true
-  validates :price_per_day, numericality: true
+  validates :price_per_day, presence: true, numericality: true
 end
