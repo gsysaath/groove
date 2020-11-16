@@ -1,3 +1,6 @@
+
+// navbar
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -8,5 +11,59 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 90px;
+  border-radius: 50%;
 }
+
+// bnt connexion, si l'user n'est pas connecte
+.btn-ghost {
+  color: #CF5C36;
+  border: 1px solid #CF5C36;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  color: #EFC88B;
+}
+
+// formulaire recherche
+
+.search-form-control {
+  position: relative;
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+}
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
+  border-radius: 50px;
+}
+
+.search-form-control .form-control:focus {
+  border: 1px solid #CF5C36;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.btn-search {
+  color: #CF5C36;
+  border: 1px solid #CF5C36 ;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
