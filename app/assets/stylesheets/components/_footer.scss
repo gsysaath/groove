@@ -1,0 +1,24 @@
+li {
+  a {
+    color: white;
+  }
+}
+
+.text-white {
+  color: white;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  color: white;
+}
+
+.footer-end {
+  a {
+    color: white;
+    &:hover {
+      color: #377073;
+    }
+  }
+}
