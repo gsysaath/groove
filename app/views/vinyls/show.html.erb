@@ -1,10 +1,10 @@
 <div class='container'></div>
-    <h1><strong><%= @vinyl.name.upcase %></strong></h1>
-    <h2> <%= @vinyl.artist %> </h2>
+  <h1><strong><%= @vinyl.name.upcase %></strong></h1>
+  <h2> <%= @vinyl.artist %> </h2>
 
   <div class="card-product">
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100" src="https://images-na.ssl-images-amazon.com/images/I/71gNT3fImCL._SX466_.jpg" alt="First slide">
@@ -26,18 +26,26 @@
   </a>
 </div>
 
-
-
     <div class="card-product-infos">
-     <ul>
-      <li><strong class="card-label">Year: </strong><%= @vinyl.year %>  </li>
-      <li><strong class="card-label">Genre: </strong><%= @vinyl.genre %>  </li>
-      <li><strong class="card-label">Label: </strong><%= @vinyl.label %>  </li>
-      <li><strong class="card-label">Quality: </strong><%= @vinyl.quality %>  </li>
-      <li><strong class="card-label">Dimension: </strong><%= @vinyl.dimension %>  </li>
-      <li><strong class="card-label">Price per day: </strong><%= @vinyl.price_per_day %> €</li>
-     </ul>
+
+       <ul>
+        <li><strong class="card-label">Year:
+          <br></strong><%= @vinyl.year %>  </li>
+        <li><strong class="card-label">Genre:
+          <br></strong><%= @vinyl.genre %>  </li>
+        <li><strong class="card-label">Label: </strong>
+          <br> <%= @vinyl.label %>  </li>
+        <li><strong class="card-label">Quality:
+          <br> </strong><%= @vinyl.quality %>  </li>
+        <li><strong class="card-label">Dimension: </strong>
+          <br> <%= @vinyl.dimension %>  </li>
+        <li><strong class="card-label">Price per day: </strong>
+          <br> <%= @vinyl.price_per_day %> €</li>
+       </ul>
+       <%= link_to "Reserve", new_vinyl_rent_path(@vinyl), class: "btn-show" %>
+
     </div>
+
   </div>
 
 
