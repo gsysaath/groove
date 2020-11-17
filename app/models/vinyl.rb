@@ -1,6 +1,7 @@
 class Vinyl < ApplicationRecord
   belongs_to :user
   has_many :rents
+  has_one_attached :photo
   validates :name, presence: true
   validates :artist, presence: true
   validates :quality, presence: true
