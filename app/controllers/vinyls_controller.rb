@@ -1,8 +1,9 @@
 class VinylsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_vinyl, only: %i[show edit update destroy]
 
   def index
-    @vinyls = Vinyl.all
+    @vinyls = policy_scope(Vinyl)
   end
 
   def show
@@ -14,7 +15,6 @@ class VinylsController < ApplicationController
 
   def create
     @vinyl = Vinyl.new
-    authorize @vinyl
     if @vinyl.save
       redirect_to vinyl_path(@vinyl)
     else
