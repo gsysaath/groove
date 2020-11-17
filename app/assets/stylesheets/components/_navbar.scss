@@ -84,12 +84,16 @@
 }
 
 .dashlist {
-  margin: 30px 0;
+  margin: 30px 10px;
+  color: black;
+  padding: 15px 0;
 }
 
 .dashlink {
+  color: black;
   &:hover {
     text-decoration: none;
+    color: black;
   }
 }
 
