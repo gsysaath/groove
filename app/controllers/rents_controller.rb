@@ -23,7 +23,7 @@ class RentsController < ApplicationController
   private
 
   def set_vinyl
-    @vinyl = Vinyl.find(params[:id])
+    @vinyl = Vinyl.find(params[:vinyl_id])
   end
 
   def params_rent
