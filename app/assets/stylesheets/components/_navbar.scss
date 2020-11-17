@@ -4,6 +4,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  z-index: 10;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -24,6 +25,8 @@
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
+  margin-top: 7px;
+  margin-left: 20px;
 }
 
 .btn-ghost:hover {
@@ -67,3 +70,9 @@
   transition: opacity 0.3s ease;
 }
 
+.container-navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}

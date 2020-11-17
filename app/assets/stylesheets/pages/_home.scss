@@ -1,1 +1,391 @@
 // Specific CSS for your home-page
+/*-----------------------------------------------
+TABLE OF CONTENTS:
+
+1) GENERAL
+      A- Texts
+      B- Buttons
+      C- Images
+
+2) HEADER
+      A- Logo
+      B- Nav
+
+3) MAIN
+      A- Intro
+      B- Products
+      C- Features
+      D- Testimonials
+
+4) FOOTER
+      A- Newsletter
+      B- Connect & Contact
+
+
+-----------------------------------------------*/
+
+
+/*-----------------------------------------------
+1) GENERAL
+-----------------------------------------------*/
+
+:root {
+    --accent-color: rgb(80, 162, 167);
+    --main-color: black;
+}
+
+.main {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    color: var(--main-color);
+    background-color: white;
+    transition: all 1s ease-out;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+    /*-------------------------------------------
+    1) A- TEXTS
+    -------------------------------------------*/
+
+h1, h2, h3, h4 {
+    font-weight: 400;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+h2 {
+    letter-spacing: 0.5em;
+    margin: 0 auto 0.25em auto;
+}
+
+h3, h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: 0 auto 0.5em auto;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+h2 + p {
+    margin: 0 auto 2.5em auto;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+.accent {
+    position: relative;
+    z-index: 1;
+}
+.accent::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.25em;
+    height: 0.5rem;
+    background: var(--accent-color);
+    z-index: -1;
+}
+
+
+
+    /*-------------------------------------------
+    1) B- BUTTONS
+    -------------------------------------------*/
+
+.button {
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    background-color: var(--accent-color);
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.3);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+}
+.button:hover {
+    box-shadow: none;
+}
+
+
+    /*-------------------------------------------
+    1) C- IMAGES
+    -------------------------------------------*/
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+
+/*-----------------------------------------------
+2) HEADER
+-----------------------------------------------*/
+
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2.5vw;
+}
+/* Fluid padding */
+@media screen and (min-width: 37.5rem) {
+    main {
+        padding: 0 calc(0vw + 20 * ((100vw - 37.5rem) / 82.5));
+    }
+}
+@media screen and (min-width: 120rem) {
+    main {
+        padding: 0 20vw;
+    }
+}
+
+
+main > section {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+
+
+    /*-------------------------------------------
+    3) A- INTRO
+    -------------------------------------------*/
+
+#intro {
+    height: 100vh;
+    padding: 12vh 0 0 0;
+}
+/* Fluid padding-top */
+ @media screen and (min-width: 37.5rem) {
+    #intro {
+      padding-top: calc(12vh + -4 * ((100vw - 37.5rem) / 82.5));
+    }
+}
+  @media screen and (min-width: 120rem) {
+    #intro {
+      padding-top: 8vh;
+    }
+}
+
+.figure-intro {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "all";
+    justify-items: center;
+    align-items: start;
+    margin: 0 auto;
+}
+
+.circle-intro {
+    grid-area: all;
+    max-width: 75%;
+    z-index: 1;
+    opacity: 0;
+    animation: appear-circle 1.25s ease-out forwards;
+}
+@keyframes appear-circle {
+    from {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+}
+
+
+.img-intro {
+    padding-top: 35px;
+    grid-area: all;
+    max-width: 60%;
+    z-index: 2;
+    opacity: 0;
+    animation: appear-img 2s 1.25s ease-out forwards;
+}
+@keyframes appear-img {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+
+
+    /*-------------------------------------------
+    3) B- PRODUCTS
+    -------------------------------------------*/
+
+.img-product-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-product {
+    margin-bottom: 1rem;
+}
+
+.portrait {
+    max-width: 39%;
+}
+.landscape {
+    max-width: 46%;
+}
+
+.product-quote {
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem auto;
+    padding: 1rem 0 0 0;
+    text-align: center;
+}
+
+.product-quote > p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+    max-width: 100%;
+}
+/* Fluid font-size */
+ @media screen and (min-width: 37.5rem) {
+    .product-quote > p {
+            font-size: calc(1rem + 0.9 * ((100vw - 37.5rem) / 82.5));
+            max-width: 52%;
+    }
+}
+  @media screen and (min-width: 120rem) {
+    .product-quote > p {
+            font-size: 1.9rem;
+            max-width: 50%;
+    }
+}
+
+
+p.author {
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-variant: small-caps;
+    letter-spacing: 0.125em;
+    margin-bottom: 0;
+}
+
+
+
+    /*-------------------------------------------
+    3) C- FEATURES
+    -------------------------------------------*/
+
+.feature-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4rem;
+}
+
+.feature {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto 3rem auto;
+}
+
+.feature > img {
+    max-width: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.feature > p {
+    max-width: 14rem;
+    margin-bottom: 1.5rem;
+}
+
+.explore {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.explore > img {
+    max-width: 80%;
+    margin-top: -6rem;
+    transition: transform 0.5s ease-out;
+}
+.explore .button:hover + img {
+  transform: translateY(-2rem);
+}
+
+.explore .button {
+    width: 90%;
+    margin: 0 auto;
+    z-index: 5;
+    transition: transform 0.5s ease-out;
+}
+.explore .button:hover {
+  transform: translateY(0.25rem);
+}
+
+
+footer {
+    width: 100vw;
+    max-width: 100%;
+    p {
+      text-align: left;
+    }
+}
