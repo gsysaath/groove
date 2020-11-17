@@ -5,3 +5,33 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Vinyl.destroy_all
+User.destroy_all
+
+
+user1 = User.create!(email: 'toto@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef')
+
+dimensions1="33 tours"
+dimensions2="45 tours"
+
+vinyl1 = Vinyl.create(name: "Highly Evolved",
+         year:"2017",
+         artist:"The Vines",
+        genre: "Rock",
+        label: "Motown",
+        quality: "good",
+        price_per_day: 2,
+        user: user1,
+        dimension: dimensions1
+      )
+
+vinyl2 = Vinyl.create(name:"Jean Sebastien Bach 'Prestige de l'Orgue'",
+         year:"1970",
+         artist:"Helmut Walcha",
+        genre: "Classic",
+        label: "Deutsche Grammophon Collection",
+        quality: "good",
+        price_per_day: 2,
+        user: user1,
+        dimension: dimensions2
+      )
