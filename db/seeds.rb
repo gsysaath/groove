@@ -35,3 +35,37 @@ vinyl2 = Vinyl.create(name:"Jean Sebastien Bach 'Prestige de l'Orgue'",
         user: user1,
         dimension: dimensions2
       )
+
+
+Vinyl.create(name: "Highly Evolved 2",
+         year:"2017",
+         artist:"The Vines",
+        genre: "Rock",
+        label: "Motown",
+        quality: "good",
+        price_per_day: 2,
+        user: user1,
+        dimension: dimensions1
+      )
+
+Vinyl.create(name: "Highly Evolved 3",
+         year:"2017",
+         artist:"The Vines",
+        genre: "Rock",
+        label: "Motown",
+        quality: "good",
+        price_per_day: 2,
+        user: user1,
+        dimension: dimensions1
+      )
+
+Vinyl.create(name: "Highly Evolved 4",
+         year:"2017",
+         artist:"The Vines",
+        genre: "Rock",
+        label: "Motown",
+        quality: "good",
+        price_per_day: 2,
+        user: user1,
+        dimension: dimensions1
+      )

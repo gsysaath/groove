@@ -7,14 +7,19 @@
 <div class="main">
   <ul class="card1-list">
     <h2 class="display-2">Browse</h2>
+      <h4>Sort by</h4>
+      <form class="form-inline">
+        <p><%= check_box_tag :quality, class: "cb-quality" %> Quality</p>
+        <p><%= check_box_tag :year, class: "cb-year" %> Year</p>
+        <p><%= check_box_tag :label, class: "cb-label" %> Label</p>
+        <p><%= check_box_tag :price_per_day, class: "cb-price-per-day" %> Price per Day</p>
+        <p><%= check_box_tag :artist, class: "cb-artist" %> Artist</p>
+      </form>
     <% @vinyls.each do |vinyl| %>
       <li class="card1">
         <%= link_to vinyl_path(vinyl), class: "card1-image" do %>
-          <%# if vinyl.photo.attached? %>
-            <%#= cl_image_tag vinyl.photo.key %>
-          <%# else %>
-            <%= image_tag "https://cdn.pixabay.com/photo/2014/04/03/00/35/vinyl-308761_1280.png" %>
-          <%# end %>
+          <%= image_tag "https://cdn.pixabay.com/photo/2012/04/11/12/05/disc-inside-27800_1280.png" %>
+          <%= image_tag "https://cdn.pixabay.com/photo/2014/04/03/00/35/vinyl-308761_1280.png", class: "img-behind" %>
         <% end %>
         <%= link_to vinyl_path(vinyl), class: "card1-description" do %>
           <h2><%= vinyl.name.upcase %></h2>
