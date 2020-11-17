@@ -77,3 +77,35 @@
   top: 0;
   z-index: 10;
 }
+
+.dropdown {
+  margin: 5px;
+  margin-left: 20px;
+}
+
+.dashlist {
+  margin: 30px 0;
+}
+
+.dashlink {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.dashtitle {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.list-group {
+  margin-bottom: 50px;
+}
+
+
+
+
+
+
+
+
