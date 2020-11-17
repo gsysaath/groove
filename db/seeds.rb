@@ -5,11 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Rent.destroy_all
 Vinyl.destroy_all
 User.destroy_all
 
 
-user1 = User.create!(email: 'toto@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef')
+user1 = User.create!(email: 'toto@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Georgito", last_name: "Yito")
 
 dimensions1="33 tours"
 dimensions2="45 tours"
