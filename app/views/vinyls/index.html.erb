@@ -1,0 +1,26 @@
+<div class="banner border-bottom border-primary">
+  <div class="d-flex align-items-end pl-3 pb-2">
+    <h1>Explore Vinyls Collection</h1>
+  </div>
+</div>
+
+<div class="main">
+  <ul class="card1-list">
+    <h2 class="display-2">Browse</h2>
+    <% @vinyls.each do |vinyl| %>
+      <li class="card1">
+        <%= link_to vinyl_path(vinyl), class: "card1-image" do %>
+          <%# if vinyl.photo.attached? %>
+            <%#= cl_image_tag vinyl.photo.key %>
+          <%# else %>
+            <%= image_tag "https://cdn.pixabay.com/photo/2014/04/03/00/35/vinyl-308761_1280.png" %>
+          <%# end %>
+        <% end %>
+        <%= link_to vinyl_path(vinyl), class: "card1-description" do %>
+          <h2><%= vinyl.name.upcase %></h2>
+          <p><%= vinyl.artist %></p>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
