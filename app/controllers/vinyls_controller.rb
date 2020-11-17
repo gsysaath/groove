@@ -7,6 +7,7 @@ class VinylsController < ApplicationController
   end
 
   def show
+    @vinyl = Vinyl.find(params[:id])
   end
 
   def new
