@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/dashboard', to: "pages#dashboard"
   resources :vinyls, only: [ :index, :show, :new, :create, :destroy] do
-    resources :rents, only: [ :create ]
+    resources :rents, only: [ :new, :create ]
   end
   resources :rents, only: [ :destroy ]
 end
