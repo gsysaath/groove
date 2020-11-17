@@ -1,4 +1,4 @@
-class VinylPolicy < ApplicationPolicy
+class RentPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -7,8 +7,8 @@ class VinylPolicy < ApplicationPolicy
     end
   end
 
-  def index
-    @vinyls = policy_scope(Vinyl).order(created_at: :desc)
+  def new?
+    create?
   end
 
   def create?
