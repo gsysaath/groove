@@ -1,7 +1,7 @@
 <div class="container-navbar">
   <div class="navbar navbar-expand-sm navbar-lewagon">
 
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
       <img src="https://img2.freepng.fr/20180601/vui/kisspng-logo-brand-font-vinyl-5b10f2e81101d7.5938640415278374160697.jpg" />
     </a>
 
@@ -12,7 +12,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <ul class="navbar-nav mr-auto">
-
+        <li class="nav-item">
+          <%= link_to "All our Vinyls", vinyls_path, class: "btn btn-ghost" %>
+        </li>
         <li class="nav-item active">
           <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
             <div class="search-form-control form-group">
@@ -30,16 +32,16 @@
         <!-- Si l'user est connecté -->
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatars2.githubusercontent.com/u/71122730?s=460&u=7e0d3549a504c6c81c658567df4be61ac223c86b&v=4" />
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">My locations</a>
-              <a class="dropdown-item" href="#">My account</a>
+              <a class="dropdown-item" href="/dashboard">My Dashboard</a>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         <!-- Si l'user est déconnecté -->
         <% else %>
           <li>
-            <a class="btn btn-ghost" href="#">Log in</a>
+            <%= link_to "Log in", new_user_session_path, class: "btn btn-ghost" %>
           </li>
         <% end %>
 

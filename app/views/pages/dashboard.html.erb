@@ -1,0 +1,26 @@
+<div class="banner border-bottom border-primary">
+  <div class="d-flex align-items-end pl-3 pb-2">
+    <h1>D A S H B O A R D</h1>
+  </div>
+</div>
+
+<div class="main">
+  <h2 class="dashtitle">Remaining locations</h2>
+
+  <ul class="list-group list-unstyled">
+    <% @rents.each do |rent| %>
+      <li class="btn btn-outline-primary dashlist">
+
+        <%= link_to vinyl_path(rent.vinyl), class: "dashlink"  do%>
+
+          <%= rent.vinyl.name %><hr>
+          There is <%= (rent.end_date - Time.now).fdiv(86400).to_i + 1 %> Days left <hr>
+          The owner is <%= rent.vinyl.user.first_name %> <%= rent.vinyl.user.last_name %>
+
+        <% end %>
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

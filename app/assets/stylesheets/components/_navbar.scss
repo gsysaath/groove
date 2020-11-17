@@ -26,6 +26,7 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
   margin-top: 7px;
+  margin-right: 20px;
   margin-left: 20px;
 }
 
@@ -76,3 +77,39 @@
   top: 0;
   z-index: 10;
 }
+
+.dropdown {
+  margin: 5px;
+  margin-left: 20px;
+}
+
+.dashlist {
+  margin: 30px 10px;
+  color: black;
+  padding: 15px 0;
+}
+
+.dashlink {
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.dashtitle {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.list-group {
+  margin-bottom: 50px;
+}
+
+
+
+
+
+
+
+

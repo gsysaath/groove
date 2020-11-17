@@ -1,0 +1,8 @@
+<div class="main">
+  <h2>Form for a new trade</h2>
+  <%= simple_form_for [ @vinyl, @rent ] do |f|%>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.button :submit , class: "btn btn-ghost"%>
+  <% end %>
+</div>

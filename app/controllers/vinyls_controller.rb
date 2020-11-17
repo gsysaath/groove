@@ -1,12 +1,14 @@
 class VinylsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_vinyl, only: %i[show edit update destroy]
 
   def index
-    @vinyls = Vinyl.all
+    @vinyls = policy_scope(Vinyl)
   end
 
   def show
     @vinyl = Vinyl.find(params[:id])
+    authorize @vinyl
   end
 
   def new
@@ -47,6 +49,6 @@ class VinylsController < ApplicationController
   def vinyl_params
     params.require(:vinyl).permit(:name, :year, :user_id, :artist, :genre,
                                   :label, :quality, :dimension, :price_per_day,
-                                  :available)
+                                  :available, :photo)
   end
 end
