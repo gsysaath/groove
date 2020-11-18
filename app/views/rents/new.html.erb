@@ -6,11 +6,11 @@
 <div class="main mt-4 pt-4">
   <h2>New Rent of:</h2>
   <h5 class="my-3"><%= @vinyl.name %></h5>
-  <p class="my-3">Price per day : <span class="price-per-day"><%= @vinyl.price_per_day %></span> €</p>
+  <p class="my-3">Price per day : <span class="price-per-day"><%= '%.2f' % @vinyl.price_per_day %></span> €</p>
   <%= simple_form_for [ @vinyl, @rent ] do |f|%>
     <%= f.input :start_date , as: :date, class: "startdate my-1" %>
     <%= f.input :end_date, as: :date, class: "enddate my-1" %>
     <%= f.button :submit , class: "btn btn-outline-primary submitform"%>
   <% end %>
-  <h2 class="text-center">Total : <span class="price-total"><%= @vinyl.price_per_day %></span>€</h2>
+  <h2 class="text-center">Total : <span class="price-total"><%= '%.2f' % @vinyl.price_per_day %></span>€</h2>
 </div>

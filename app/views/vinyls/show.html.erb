@@ -40,7 +40,7 @@
         <li><strong class="card-label">Dimension: </strong>
           <br> <%= @vinyl.dimension %>  </li>
         <li><strong class="card-label">Price per day: </strong>
-          <br> <%= @vinyl.price_per_day %> €</li>
+          <br> <%= '%.2f' % @vinyl.price_per_day %> €</li>
        </ul>
        <%= link_to "Reserve", new_vinyl_rent_path(@vinyl), class: "btn-show" %>
 
