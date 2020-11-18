@@ -22,7 +22,9 @@ if (rentStart) {
     let date1 = new Date(year1, month1, day1);
     let date2 = new Date(year2, month2, day2);
     let difDays = Math.round((date2 - date1) / 86400000);
-    priceTotal.innerText = parseFloat(priceDay.innerText) * (difDays + 1);
+    parseFloat(priceDay.innerText) * (difDays + 1) >= 0 ?
+    priceTotal.innerText = (parseFloat(priceDay.innerText) * (difDays + 1)).toFixed(2) :
+    priceTotal.innerText = 0;
   })
 }
 
@@ -39,6 +41,8 @@ if (rentEnd) {
     let date1 = new Date(year1, month1, day1);
     let date2 = new Date(year2, month2, day2);
     let difDays = Math.round((date2 - date1) / 86400000);
-    priceTotal.innerText = parseFloat(priceDay.innerText) * (difDays + 1);
+    parseFloat(priceDay.innerText) * (difDays + 1) >= 0 ?
+    priceTotal.innerText = (parseFloat(priceDay.innerText) * (difDays + 1)).toFixed(2) :
+    priceTotal.innerText = 0;
   })
 };
