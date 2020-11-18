@@ -12,7 +12,6 @@ User.destroy_all
 
 user = User.create!(email: 'toto@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Georgito", last_name: "Yito", address: "84 boulevard massena, Paris")
 user1 = User.create!(email: 'toto1@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Martin", last_name: "Tran", address: "110 avenue de choisy, Paris")
-
 user2 = User.create!(email: 'toto2@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Olivier", last_name: "Calmels", address: "10 rue du mec perdu Paris")
 user3 = User.create!(email: 'toto3@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Amal", last_name: "Gouia", address: "10 rue du mec perdu Paris")
 user4 = User.create!(email: 'toto4@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Gerom", last_name: "Bretzel", address: "10 rue du mec perdu Paris")
