@@ -5,15 +5,16 @@
   justify-content: space-between;
   background: white;
   z-index: 10;
+  padding-bottom: 0px!important;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 90px;
-  border-radius: 50%;
+.navbar-brand > img {
+  padding-bottom:10px;
+  width: 50px;
 }
 
 // bnt connexion, si l'user n'est pas connecte
@@ -111,6 +112,9 @@
   margin-bottom: 50px;
 }
 
+.myrent {
+  margin-left: 0px!important;
+}
 
 
 

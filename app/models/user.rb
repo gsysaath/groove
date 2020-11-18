@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :rents
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  has_one_attached :profile_picture
 end

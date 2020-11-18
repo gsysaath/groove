@@ -2,7 +2,7 @@
   <div class="navbar navbar-expand-sm navbar-lewagon">
 
     <a class="navbar-brand" href="/">
-      <img src="https://img2.freepng.fr/20180601/vui/kisspng-logo-brand-font-vinyl-5b10f2e81101d7.5938640415278374160697.jpg" />
+      <%= image_tag "vinyl_green.png" %>
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,6 +14,9 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <%= link_to "All our Vinyls", vinyls_path, class: "btn btn-ghost" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Rent your Vinyl", new_vinyl_path, class: "btn btn-ghost myrent" %>
         </li>
         <li class="nav-item active">
           <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />

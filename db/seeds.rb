@@ -10,7 +10,9 @@ Vinyl.destroy_all
 User.destroy_all
 
 
-user1 = User.create!(email: 'toto@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Georgito", last_name: "Yito", address: "16 Villa Gaudelet, Paris")
+user = User.create!(email: 'toto@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Georgito", last_name: "Yito", address: "84 boulevard massena, Paris")
+user1 = User.create!(email: 'toto1@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Martin", last_name: "Tran", address: "110 avenue de choisy, Paris")
+
 user2 = User.create!(email: 'toto2@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Olivier", last_name: "Calmels", address: "10 rue du mec perdu Paris")
 user3 = User.create!(email: 'toto3@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Amal", last_name: "Gouia", address: "10 rue du mec perdu Paris")
 user4 = User.create!(email: 'toto4@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Gerom", last_name: "Bretzel", address: "10 rue du mec perdu Paris")
@@ -89,7 +91,7 @@ Vinyl.create(name: "More Miles Per Hour",
 
 Vinyl.create(name: "Nightwatch",
          year:"1978",
-         artist:"Kenny Loggins8",
+         artist:"Kenny Loggins",
         genre: "Rock",
         label: "Columbia",
         quality: "Very Good",
@@ -120,6 +122,62 @@ Vinyl.create(name: "Let It Be",
             dimension: dimensions1
             )
 
+Vinyl.create(name: "En Elsker",
+            year: "1986",
+            artist: "Marquis De Sade, Anne Linnet",
+            genre: "Rock",
+            label: "CBS",
+            quality: "New",
+            price_per_day: 1.00,
+            user: user5,
+            dimension: dimensions1
+            )
+
+Vinyl.create(name: "Break Every Rule",
+            year: "1986",
+            artist: "Tina Turner",
+            genre: "Rock",
+            label: "Capitol Records",
+            quality: "Good",
+            price_per_day: 2.00,
+            user: user4,
+            dimension: dimensions1
+            )
+
+
+Vinyl.create(name: "Det Flyvende Tæppe",
+            year: "1990",
+            artist: "Danseorkestret",
+            genre: "Rock",
+            label: "Virgin",
+            quality: "Good",
+            price_per_day: 1.00,
+            user: user4,
+            dimension: dimensions1
+            )
+
+Vinyl.create(name: "Lifeline",
+            year: "1976",
+            artist: "Pablo Cruise",
+            genre: "Rock",
+            label: "A&M Records",
+            quality: "Good",
+            price_per_day: 1.00,
+            user: user4,
+            dimension: dimensions1
+            )
+
+Vinyl.create(name: "Live At Last",
+            year: "1977",
+            artist: "Bette Midler",
+            genre: "Jazz",
+            label: "Atlantic",
+            quality: "Poor",
+            price_per_day: 0.50,
+            user: user4,
+            dimension: dimensions1
+            )
+
 # Vinyl.create(name: "",
 #             year: "",
 #             artist: "",
@@ -130,3 +188,9 @@ Vinyl.create(name: "Let It Be",
 #             user: user,
 #             dimension: dimensions1
 #             )
+
+
+
+
+
+
