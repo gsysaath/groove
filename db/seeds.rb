@@ -120,16 +120,61 @@ Vinyl.create(name: "Let It Be",
             dimension: dimensions1
             )
 
-# Vinyl.create(name: "",
-#             year: "",
-#             artist: "",
-#             genre: "",
-#             label: "",
-#             quality: "",
-#             price_per_day: ,
-#             user: user,
-#             dimension: dimensions1
-#             )
+Vinyl.create(name: "En Elsker",
+            year: "1986",
+            artist: "Marquis De Sade, Anne Linnet",
+            genre: "Rock",
+            label: "CBS",
+            quality: "New",
+            price_per_day: 1.00,
+            user: user5,
+            dimension: dimensions1
+            )
+
+Vinyl.create(name: "Break Every Rule",
+            year: "1986",
+            artist: "Tina Turner",
+            genre: "Rock",
+            label: "Capitol Records",
+            quality: "Good",
+            price_per_day: 2.00,
+            user: user4,
+            dimension: dimensions1
+            )
+
+
+Vinyl.create(name: "Det Flyvende Tæppe",
+            year: "1990",
+            artist: "Danseorkestret",
+            genre: "Rock",
+            label: "Virgin",
+            quality: "Good",
+            price_per_day: 1.00,
+            user: user4,
+            dimension: dimensions1
+            )
+
+Vinyl.create(name: "Lifeline",
+            year: "1976",
+            artist: "Pablo Cruise",
+            genre: "Rock",
+            label: "A&M Records",
+            quality: "Good",
+            price_per_day: 1.00,
+            user: user4,
+            dimension: dimensions1
+            )
+
+Vinyl.create(name: "Live At Last",
+            year: "1977",
+            artist: "Bette Midler",
+            genre: "Jazz",
+            label: "Atlantic",
+            quality: "Poor",
+            price_per_day: 0.50,
+            user: user4,
+            dimension: dimensions1
+            )
 
 # Vinyl.create(name: "",
 #             year: "",
@@ -141,10 +186,6 @@ Vinyl.create(name: "Let It Be",
 #             user: user,
 #             dimension: dimensions1
 #             )
-
-
-
-
 
 
 
