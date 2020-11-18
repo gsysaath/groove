@@ -15,7 +15,8 @@
 
           <%= rent.vinyl.name %><hr>
           There is <%= (rent.end_date - Time.now).fdiv(86400).to_i + 1 %> Days left <hr>
-          The owner is <%= rent.vinyl.user.first_name %> <%= rent.vinyl.user.last_name %>
+          Owner is <%= rent.vinyl.user.first_name %> <%= rent.vinyl.user.last_name %> <hr>
+          You paid : <%= rent.price %>€
 
         <% end %>
 
@@ -24,3 +25,4 @@
 
   </ul>
 </div>
+

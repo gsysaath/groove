@@ -18,7 +18,13 @@
     <% @vinyls.each do |vinyl| %>
       <li class="card1">
         <%= link_to vinyl_path(vinyl), class: "card1-image" do %>
-          <%= image_tag "https://cdn.pixabay.com/photo/2012/04/11/12/05/disc-inside-27800_1280.png" %>
+          <% if vinyl.name == "Jean Sebastien Bach 'Prestige de l'Orgue'" %>
+            <%= image_tag "https://img.discogs.com/7udcJdpQTzsxguHoA4_8eok2ow0=/fit-in/600x574/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-10316093-1495203843-9587.jpeg.jpg" %>
+          <% elsif vinyl.name == "Highly Evolved" %>
+            <%= image_tag "https://img.discogs.com/hC-23wEci6WpnzlQnLdnH6X6go0=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-10568439-1512063409-2064.jpeg.jpg" %>
+          <% else %>
+            <%= image_tag "https://cdn.pixabay.com/photo/2012/04/11/12/05/disc-inside-27800_1280.png" %>
+          <% end %>
           <%= image_tag "https://cdn.pixabay.com/photo/2014/04/03/00/35/vinyl-308761_1280.png", class: "img-behind" %>
         <% end %>
         <%= link_to vinyl_path(vinyl), class: "card1-description" do %>
@@ -29,3 +35,5 @@
     <% end %>
   </ul>
 </div>
+
+
