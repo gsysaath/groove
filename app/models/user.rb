@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :vinyls
   has_many :rents
+  has_one_attached :profile_picture
 end
