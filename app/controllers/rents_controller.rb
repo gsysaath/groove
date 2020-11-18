@@ -14,6 +14,7 @@ class RentsController < ApplicationController
     @rent.vinyl = @vinyl
     authorize @rent
     if @rent.save
+      flash[:notice] = "Your rental is confirmed!"
       redirect_to dashboard_path
     else
       render :new
