@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :vinyls
   has_many :rents
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
