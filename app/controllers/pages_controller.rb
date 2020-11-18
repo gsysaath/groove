@@ -6,4 +6,7 @@ class PagesController < ApplicationController
     @user = current_user
     @rents = Rent.where(user_id: @user.id)
   end
+
+  def random
+  end
 end
