@@ -13,8 +13,8 @@ class RentsController < ApplicationController
     @rent.user = current_user
     @rent.vinyl = @vinyl
     authorize @rent
-    if @rent.save!
-      redirect_to vinyls_path
+    if @rent.save
+      redirect_to dashboard_path
     else
       render :new
     end
