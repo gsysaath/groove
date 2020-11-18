@@ -4,6 +4,12 @@
   </div>
 </div>
 
+<div> 
+  <% if flash[:notice] %>
+    <div class="notice alert alert-info"><%= flash[:notice] %></div>
+  <% end %>
+</div>
+
 <div class="main">
   <h2 class="dashtitle">Remaining locations</h2>
 
