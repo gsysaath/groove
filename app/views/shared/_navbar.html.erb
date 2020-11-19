@@ -20,7 +20,6 @@
           <%= link_to "Rent your Vinyl", new_vinyl_path, class: "btn btn-ghost myrent" %>
         </li>
 
-
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <% if current_user.photo.attached? %>

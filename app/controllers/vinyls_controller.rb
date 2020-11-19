@@ -3,7 +3,11 @@ class VinylsController < ApplicationController
   before_action :set_vinyl, only: %i[show edit update destroy]
 
   def index
-    @vinyls = policy_scope(Vinyl)
+    if search_params
+      @vinyls = policy_scope(Vinyl).global_search(search_params[:query])
+    else
+      @vinyls = policy_scope(Vinyl)
+    end
   end
 
   def show
@@ -58,8 +62,19 @@ class VinylsController < ApplicationController
   end
 
   def vinyl_params
-    params.require(:vinyl).permit(:name, :year, :user_id, :artist, :genre,
-                                  :label, :quality, :dimension, :price_per_day,
-                                  :available, :photo)
+    params.require(:vinyl).permit(:name, :year,
+      :user_id,
+      :artist, :genre,
+      :label, :quality,
+      :dimension, :price_per_day,
+      :available, :photo)
+  end
+
+  def search_params
+    if params[:search].present?
+      params.require(:search).permit(:query)
+    else
+      false
+    end
   end
 end
