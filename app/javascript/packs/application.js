@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 
+import "../plugins/flatpickr"
 
 import { price } from "../vanilla/price";
 
@@ -37,9 +38,14 @@ document.addEventListener('turbolinks:load', () => {
     initMapbox();
   }
   if (document.querySelector(".rent_start_date")) {
+  console.log("hello");
     price();
   }
   // if (document.getElementById("youtube-audio")) {
   //   onYouTubeIframeAPIReady()
   // }
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+  flatpickr('.startdate');
 })
