@@ -12,6 +12,7 @@ class RentsController < ApplicationController
     @rent.price = '%.2f' % (@vinyl.price_per_day * number_of_days)
     @rent.user = current_user
     @rent.vinyl = @vinyl
+    @rent.status = "pending approval"
     authorize @rent
     if @rent.save
       flash[:notice] = "Your rental is confirmed!"
