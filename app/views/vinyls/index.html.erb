@@ -16,6 +16,7 @@
         <p><%= check_box_tag :price_per_day, class: "cb-price-per-day" %>  Price per Day</p>
         <p><%= check_box_tag :artist, class: "cb-artist" %>  Artist</p>
       </form>
+
     <% @vinyls.each do |vinyl| %>
       <li class="card1">
         <%= link_to vinyl_path(vinyl), class: "card1-image" do %>

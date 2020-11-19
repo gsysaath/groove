@@ -16,6 +16,7 @@ user2 = User.create!(email: 'toto2@yahoo.fr', password: 'abcdef', password_confi
 user3 = User.create!(email: 'toto3@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Amal", last_name: "Gouia", address: "5 Rue Blainville, 75005 Paris")
 user4 = User.create!(email: 'toto4@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Gerom", last_name: "Bretzel", address: "18 Rue des Abbesses, 75018 Paris")
 user5 = User.create!(email: 'toto5@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Alex", last_name: "Uchiwa", address: "5 Place de la Nation, 75011 Paris")
+@users = [user1, user2, user3, user4, user5]
 
 dimensions1="33 Tours"
 dimensions2="45 Tours"
@@ -188,8 +189,47 @@ Vinyl.create(name: "Live At Last",
 #             dimension: dimensions1
 #             )
 
+require 'open-uri'
+require 'nokogiri'
+require "discogs"
+
+def new_vinyl (artist_id)
+  quality = ['Poor', 'Good', 'New', 'Great']
+  price_per_day = [1, 1.25, 1.5, 1.75, 2]
+  dimensions1="33 Tours"
+  dimensions2="45 Tours"
+  dimension = [dimensions1, dimensions2]
 
 
+  wrapper = Discogs::Wrapper.new("My awesome web app")
 
+  first_album_id = wrapper.get_artist_releases(artist_id).releases.first.id
+  artist_name = wrapper.get_artist(artist_id).name
+  vinyl_name = wrapper.get_artist_releases(artist_id).releases.first.title
+  url_builder = "#{artist_name.split(" ").join('-')}-#{vinyl_name.split(" ").join('-')}"
+  url = "https://www.discogs.com/#{url_builder}/master/#{first_album_id}"
+  html_file = open(url).read
+  html_doc = Nokogiri::HTML(html_file)
+  html_doc.search('#page_content > div.body > div.image_gallery.image_gallery_large > a > span.thumbnail_center > img').each do |element|
+    @image_url = element.attribute('src')
+  end
+  html_doc.search('#page_content > div.body > div.profile > div:nth-child(3) > a').each do |element|
+    @genre = element.text
+  end
+  html_doc.search('#r5355965 > td.label.has_header > a').each do |element|
+    @label = element.text
+  end
+  Vinyl.create(name: wrapper.get_artist_releases(artist_id).releases.first.title,
+            year: wrapper.get_artist_releases(artist_id).releases.first.year,
+            artist: wrapper.get_artist(artist_id).name,
+            genre: @genre,
+            label: @label,
+            quality: quality.sample,
+            price_per_day: price_per_day.sample,
+            user: @users.sample,
+            dimension: dimension.sample,
+            image_url: @image_url
+            )
+end
 
-
+new_vinyl(1)

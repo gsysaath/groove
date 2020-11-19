@@ -12,30 +12,23 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <ul class="navbar-nav mr-auto">
+
         <li class="nav-item">
-          <%= link_to "All our Vinyls", vinyls_path, class: "btn btn-ghost" %>
+          <%= link_to "All our Vinyls", vinyls_path, class: "btn btn-ghost allourvinyl" %>
         </li>
         <li class="nav-item">
           <%= link_to "Rent your Vinyl", new_vinyl_path, class: "btn btn-ghost myrent" %>
         </li>
-        <li class="nav-item active">
-          <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-            <div class="search-form-control form-group">
-              <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-              <button name="button" type="submit" class="btn btn-search">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
-          </form>
-        </li>
 
-       <!--  <li class="nav-item">
-          <a class="nav-link" href="#">Messages</a>
-        </li> -->
-        <!-- Si l'user est connecté -->
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatars2.githubusercontent.com/u/71122730?s=460&u=7e0d3549a504c6c81c658567df4be61ac223c86b&v=4" />
+            <% if current_user.photo.attached? %>
+              <div class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= cl_image_tag user.photo.key, alt: "photo" %>
+              </div>
+            <% else %>
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://avatars2.githubusercontent.com/u/71122730?s=460&u=7e0d3549a504c6c81c658567df4be61ac223c86b&v=4" />
+            <% end %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="/dashboard">My Dashboard</a>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

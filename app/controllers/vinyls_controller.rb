@@ -3,7 +3,11 @@ class VinylsController < ApplicationController
   before_action :set_vinyl, only: %i[show edit update destroy]
 
   def index
-    @vinyls = policy_scope(Vinyl)
+    if search_params
+      @vinyls = policy_scope(Vinyl).global_search(search_params[:query])
+    else
+      @vinyls = policy_scope(Vinyl)
+    end
   end
 
   def show
@@ -19,10 +23,17 @@ class VinylsController < ApplicationController
 
   def new
     @vinyl = Vinyl.new
+    authorize @vinyl
   end
 
   def create
-    @vinyl = Vinyl.new
+    @vinyl = Vinyl.new(vinyl_params)
+    @user = current_user
+    @vinyl.user = @user
+    @vinyl.year = nil if @vinyl.year.nil?
+    @vinyl.genre = "Unknown" if @vinyl.genre == ""
+    @vinyl.label = "Unknown" if @vinyl.label == ""
+    authorize @vinyl
     if @vinyl.save
       redirect_to vinyl_path(@vinyl)
     else
@@ -53,8 +64,19 @@ class VinylsController < ApplicationController
   end
 
   def vinyl_params
-    params.require(:vinyl).permit(:name, :year, :user_id, :artist, :genre,
-                                  :label, :quality, :dimension, :price_per_day,
-                                  :available, :photo)
+    params.require(:vinyl).permit(:name, :year,
+      :user_id,
+      :artist, :genre,
+      :label, :quality,
+      :dimension, :price_per_day,
+      :available, :photo, :image_url)
+  end
+
+  def search_params
+    if params[:search].present?
+      params.require(:search).permit(:query)
+    else
+      false
+    end
   end
 end
