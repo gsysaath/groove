@@ -13,6 +13,10 @@ class VinylsController < ApplicationController
   def show
     @vinyl = Vinyl.find(params[:id])
     authorize @vinyl
+
+    @user_id = @vinyl.user_id
+    @user = User.find(@user_id)
+    @markers = [{ lat: @user.latitude, lng: @user.longitude }]
   end
 
   def new
