@@ -63,9 +63,9 @@
             <p class="my-3">Price per day : <span class="price-per-day"><%= '%.2f' % @vinyl.price_per_day %></span> €</p>
 
             <div style=" margin: 0 auto;">
-              <%= simple_form_for :search, method: "get" do |f| %>
-                <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker", id:"rangestart"} %>
-                <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker", id:"rangeend"} %>
+              <%= simple_form_for [@vinyl, @rent] do |f| %>
+                <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id:"rangestart"} %>
+                <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id:"rangeend"} %>
                 <%= f.button :submit, "Reserve", class: "btn btn-primary cta-book" %>
               <% end %>
               <hr>

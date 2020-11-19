@@ -13,20 +13,21 @@
 <div class="dash-main col-10">
   <div class="board">
     <h3  class="dashtitle">Pending approval</h3>
-    <ul class="list-group list-unstyled">
+    <div class="button-wrap">
       <% @rents_pending.select do |rent| %>
-        <li class="btn btn-outline-primary dashlist">
+        <div class="button blue">
           <%= link_to vinyl_path(rent.vinyl), class: "dashlink"  do%>
-            <%= rent.vinyl.name %><hr>
-            There is <%= (rent.end_date - Time.now).fdiv(86400).to_i + 1 %> Days left <hr>
-            Owner is <%= rent.vinyl.user.first_name %> <%= rent.vinyl.user.last_name %> <hr>
-            You paid : <%= '%.2f' % rent.price %>€ <hr>
-            Status : <%= rent.status %>
+              <%= rent.vinyl.name %><hr>
+              There is <%= (rent.end_date - Time.now).fdiv(86400).to_i + 1 %> Days left <hr>
+              Owner is <%= rent.vinyl.user.first_name %> <%= rent.vinyl.user.last_name %> <hr>
+              You paid : <%= '%.2f' % rent.price %>€ <hr>
+              Status : <%= rent.status %>
+            </div>
           <% end %>
-        </li>
       <% end %>
-    </ul>
+    </div>
   </div>
+
   <div class="board">
     <h3 class="dashtitle">Rentals to come</h3>
     <ul class="list-group list-unstyled">
@@ -36,7 +37,8 @@
             <%= rent.vinyl.name %><hr>
             There is <%= (rent.end_date - Time.now).fdiv(86400).to_i + 1 %> Days left <hr>
             Owner is <%= rent.vinyl.user.first_name %> <%= rent.vinyl.user.last_name %> <hr>
-            You paid : <%= '%.2f' % rent.price %>€
+            You paid : <%= '%.2f' % rent.price %>€ <hr>
+            Status : <%= rent.status %>
           <% end %>
         </li>
       <% end %>
@@ -51,7 +53,8 @@
             <%= rent.vinyl.name %><hr>
             There is <%= (rent.end_date - Time.now).fdiv(86400).to_i + 1 %> Days left <hr>
             Owner is <%= rent.vinyl.user.first_name %> <%= rent.vinyl.user.last_name %> <hr>
-            You paid : <%= '%.2f' % rent.price %>€
+            You paid : <%= '%.2f' % rent.price %>€ <hr>
+            Status : <%= rent.status %>
           <% end %>
         </li>
       <% end %>
@@ -66,10 +69,14 @@
             <%= rent.vinyl.name %><hr>
             There is <%= (rent.end_date - Time.now).fdiv(86400).to_i + 1 %> Days left <hr>
             Owner is <%= rent.vinyl.user.first_name %> <%= rent.vinyl.user.last_name %> <hr>
-            You paid : <%= '%.2f' % rent.price %>€
+            You paid : <%= '%.2f' % rent.price %>€ <hr>
+            Status : <%= rent.status %>
           <% end %>
         </li>
       <% end %>
     </ul>
   </div>
 </div>
+
+<script src="button.js" >
+</script>
