@@ -1,6 +1,7 @@
 <div class='container'>
   <h1 ><strong><%= @vinyl.name.upcase %></strong></h1>
   <h2 > <%= @vinyl.artist %> </h2>
+  <!-- div -->
   <div class="carte d-flex justify-content-between pb-3 mb-3">
     <div>
       <%= image_tag "https://img.discogs.com/K06O3Z6sYk52ejP3TIf2ZQ5ZB10=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1850513-1375949679-9022.jpeg.jpg" %>
@@ -24,11 +25,19 @@
             <br> <%= '%.2f' % @vinyl.price_per_day %> €</li>
          </ul>
          <%= link_to "Reserve", new_vinyl_rent_path(@vinyl), class: "btn-show" %>
-
       </div>
+    </div>
+
+<!-- form -->
+    <div>
+
+
 
     </div>
+
+
+
+
+
   </div>
-
-
 </div>
