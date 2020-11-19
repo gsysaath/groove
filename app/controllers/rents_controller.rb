@@ -2,7 +2,8 @@ class RentsController < ApplicationController
   before_action :set_vinyl, only: %i[new create]
 
   def new
-
+    @rent = Rent.new
+    authorize @rent
   end
 
   def create
