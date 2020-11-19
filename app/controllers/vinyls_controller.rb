@@ -2,8 +2,6 @@ class VinylsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_vinyl, only: %i[show edit update destroy]
 
-  require "discogs"
-
   def index
     if search_params
       @vinyls = policy_scope(Vinyl).global_search(search_params[:query])
