@@ -1,44 +1,81 @@
 <div class='container'>
   <h1 ><strong><%= @vinyl.name.upcase %></strong></h1>
   <h2 > <%= @vinyl.artist %> </h2>
-  <!-- div -->
-  <div class="carte d-flex justify-content-between pb-3 mb-3">
-    <div>
-      <%= image_tag "https://img.discogs.com/K06O3Z6sYk52ejP3TIf2ZQ5ZB10=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1850513-1375949679-9022.jpeg.jpg" %>
-    </div>
 
-    <div class="card-product">
-      <div class="card-product-infos">
 
-         <ul>
-          <li><strong class="card-label">Year:
-            <br></strong><%= @vinyl.year %>  </li>
-          <li><strong class="card-label">Genre:
-            <br></strong><%= @vinyl.genre %>  </li>
-          <li><strong class="card-label">Label: </strong>
-            <br> <%= @vinyl.label %>  </li>
-          <li><strong class="card-label">Quality:
-            <br> </strong><%= @vinyl.quality %>  </li>
-          <li><strong class="card-label">Dimension: </strong>
-            <br> <%= @vinyl.dimension %>  </li>
-          <li><strong class="card-label">Price per day: </strong>
-            <br> <%= '%.2f' % @vinyl.price_per_day %> €</li>
-         </ul>
-         <%= link_to "Reserve", new_vinyl_rent_path(@vinyl), class: "btn-show" %>
+  <!-- div cards -->
+    <!-- div 1 -->
+  <div class="info-book">
+    <!-- div info -->
+    <div class="info">
+
+      <div class="carte pb-3 mb-3">
+        <div>
+          <%= image_tag "https://img.discogs.com/K06O3Z6sYk52ejP3TIf2ZQ5ZB10=/fit-in/600x599/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1850513-1375949679-9022.jpeg.jpg" %>
+        </div>
+
+          <div class="card-product-infos">
+            <!-- div 1er ul -->
+            <div class="ul1">
+             <ul>
+              <li><strong class="card-label">Year:
+                <br></strong><%= @vinyl.year %>  </li>
+              <li><strong class="card-label">Genre:
+                <br></strong><%= @vinyl.genre %>  </li>
+              </ul>
+            </div>
+            <!-- div 2em ul -->
+            <div class="ul2">
+              <ul>
+                <li><strong class="card-label">Label: </strong>
+                  <br> <%= @vinyl.label %>  </li>
+                <li><strong class="card-label">Quality:
+                  <br> </strong><%= @vinyl.quality %>  </li>
+              </ul>
+            </div>
+             <!-- div 2em ul -->
+            <div class="ul3">
+              <ul>
+                <li><strong class="card-label">Dimension: </strong>
+                  <br> <%= @vinyl.dimension %>  </li>
+                <li><i class="far fa-money-bill-alt card-label"></i><strong class="card-label"> Price per day: </strong>
+                  <br> <%= '%.2f' % @vinyl.price_per_day %> €</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
       </div>
+
+      <div class="book">
+          <div class="card-book">
+            <p class="my-3">Price per day : <span class="price-per-day"><%= '%.2f' % @vinyl.price_per_day %></span> €</p>
+
+            <div style=" margin: 0 auto;">
+              <%= simple_form_for :search, method: "get" do |f| %>
+                <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker", id:"rangestart"} %>
+                <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker", id:"rangeend"} %>
+                <%= f.button :submit, "Reserve", class: "btn btn-primary cta-book" %>
+              <% end %>
+              <hr>
+              <h4 class="text-center">Total : <span class="price-total"><%= '%.2f' % @vinyl.price_per_day %></span>€</h4>
+            </div>
+          </div>
+      </div>
+
+<!-- end info-book -->
+    </div>
+
+
+  <!-- div map -->
+  <div class="container-map">
+    <div id="map"
+      class="map"
+      data-markers=" <%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-<!-- form -->
 
-
-
-<!-- map -->
-  <div id="map"
-    style="height: 600px; width: 100%"
-    data-markers=" <%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-
-
-
+<!-- end container de la page -->
 </div>
+
