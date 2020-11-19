@@ -14,7 +14,7 @@
   <div class="board">
     <h3  class="dashtitle">Pending approval</h3>
     <ul class="list-group list-unstyled">
-      <% @rents.select do |rent| %>
+      <% @rents_pending.select do |rent| %>
         <li class="btn btn-outline-primary dashlist">
           <%= link_to vinyl_path(rent.vinyl), class: "dashlink"  do%>
             <%= rent.vinyl.name %><hr>
@@ -30,7 +30,7 @@
   <div class="board">
     <h3 class="dashtitle">Rentals to come</h3>
     <ul class="list-group list-unstyled">
-      <% @rents.each do |rent| %>
+      <% @rents_to_come.each do |rent| %>
         <li class="btn btn-outline-primary dashlist">
           <%= link_to vinyl_path(rent.vinyl), class: "dashlink"  do%>
             <%= rent.vinyl.name %><hr>
@@ -45,7 +45,7 @@
   <div class="board">
     <h3 class="dashtitle">Currently renting</h3>
     <ul class="list-group list-unstyled">
-      <% @rents.each do |rent| %>
+      <% @rents_current.each do |rent| %>
         <li class="btn btn-outline-primary dashlist">
           <%= link_to vinyl_path(rent.vinyl), class: "dashlink"  do%>
             <%= rent.vinyl.name %><hr>
@@ -60,7 +60,7 @@
   <div class="board">
     <h3 class="dashtitle">Previous rentals</h3>
     <ul class="list-group list-unstyled">
-      <% @rents.each do |rent| %>
+      <% @rents_previous.each do |rent| %>
         <li class="btn btn-outline-primary dashlist">
           <%= link_to vinyl_path(rent.vinyl), class: "dashlink"  do%>
             <%= rent.vinyl.name %><hr>

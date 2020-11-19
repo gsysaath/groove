@@ -18,14 +18,29 @@ class PagesController < ApplicationController
 
   private
 
-  def status_updating
-    @rents_to_come = @rents.where(status: "rental to come")
-    today = Date.now
-    @rents_to_come.each do |rent|
-      if rent.
-
-    end
-
+  def rents_to_come
+    return @rents.where(status: "rental to come").or(@rents.where(status: ""))
   end
 
+  def status_updating
+    today = Date.new
+    @rents_to_come = @rents.where(status: "rental to come")
+    @rents_to_come.each do |rent|
+      if rent.start_date <= today && rent.end_date >= today
+        rent.status = "currently renting"
+      elsif rent.end_date < today
+        rent.status = "previous rental"
+      end
+    end
+
+    @rents_current = @rents.where(status: "currently renting")
+    @rents_current.each do |rent|
+      if rent.start_date <= today && rent.end_date >= today
+        rent.status = "currently renting"
+      elsif rent.end_date < today
+        rent.status = "previous rental"
+      end
+    end
+    # @rents_to_come = rents_array.where(status: "rental to come")
+  end
 end
