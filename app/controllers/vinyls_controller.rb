@@ -13,6 +13,8 @@ class VinylsController < ApplicationController
     @user_id = @vinyl.user_id
     @user = User.find(@user_id)
     @markers = [{ lat: @user.latitude, lng: @user.longitude }]
+
+    @rent = Rent.new
   end
 
   def new
