@@ -67,7 +67,7 @@ class VinylsController < ApplicationController
       :artist, :genre,
       :label, :quality,
       :dimension, :price_per_day,
-      :available, :photo)
+      :available, :photo, :image_url)
   end
 
   def search_params

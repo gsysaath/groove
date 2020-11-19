@@ -27,7 +27,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'pundit'
 
 gem 'geocoder'
-
+gem 'discogs-wrapper'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -38,8 +38,6 @@ gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 gem 'pg_search', '~> 2.3.0'
-
-
 
 group :development, :test do
   gem 'pry-byebug'
