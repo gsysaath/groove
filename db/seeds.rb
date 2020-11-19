@@ -189,7 +189,39 @@ Vinyl.create(name: "Live At Last",
 #             )
 
 
+require 'open-uri'
+require 'nokogiri'
 
+# first_album_id = wrapper.get_artist_releases("329937").releases.first.id
+url = "https://www.discogs.com/Manilla-Road-Invasion/master/323447"
+html_file = open(url).read
+html_doc = Nokogiri::HTML(html_file)
+html_doc.search('#page_content > div.body > div.image_gallery.image_gallery_large > a > span.thumbnail_center > img').each do |element|
+  puts element.attribute('src')
+end
+html_doc.search('#page_content > div.body > div.profile > div:nth-child(3) > a').each do |element|
+  puts element.text
+end
 
+        # genre: "Rock", <-- scrapp it OK
+        # label: "Motown", <-- scrapp it OK
+        # quality: "Good", <-- assign at random
+        # price_per_day: 2.00, <-- assign at random between 1 and 2
+        # user: user2, <-- assign at random (user1 - 5)
+        # dimension: dimensions1 <-- assign at random (1 and 2)
 
+      <p>Vinyl image: = wrapper.get_artist_releases("329937").releases.first.id</p>
+      <p>Vinyl year: = wrapper.get_artist_releases("329937").releases.first.year</p>
+      <p>Vinyl name: = wrapper.get_artist_releases("329937").releases.first.title</p>
+      <p>Artist name: = wrapper.get_artist("329937").name</p>
 
+# Vinyl.create(name: wrapper.get_artist_releases("329937").releases.first.title,
+#             year: wrapper.get_artist_releases("329937").releases.first.year,
+#             artist: wrapper.get_artist("329937").name,
+#             genre: "",
+#             label: "",
+#             quality: "",
+#             price_per_day: ,
+#             user: user,
+#             dimension: dimensions1
+#             )

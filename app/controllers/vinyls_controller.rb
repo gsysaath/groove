@@ -6,7 +6,6 @@ class VinylsController < ApplicationController
 
   def index
     @vinyls = policy_scope(Vinyl)
-    @wrapper = Discogs::Wrapper.new("groove")
   end
 
   def show
