@@ -30,6 +30,7 @@ import { price } from "../vanilla/price";
 
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { onYouTubeIframeAPIReady } from '../plugins/init_youtube';
 
 document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('map')) {
@@ -38,4 +39,7 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector(".rent_start_date")) {
     price();
   }
+  // if (document.getElementById("youtube-audio")) {
+  //   onYouTubeIframeAPIReady()
+  // }
 })
