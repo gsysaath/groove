@@ -1,6 +1,9 @@
 class RentsController < ApplicationController
   before_action :set_vinyl, only: %i[new create]
 
+  # STATUS = %w[pending_approval rentals_to_come currently_renting previous_rentals].freeze
+  # validates :category, inclusion: { in: STATUS }
+
   def new
     @rent = Rent.new
     authorize @rent
