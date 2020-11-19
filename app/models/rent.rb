@@ -18,4 +18,5 @@ class Rent < ApplicationRecord
       false
     end
   end
+
 end
