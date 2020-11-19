@@ -13,10 +13,17 @@ class VinylsController < ApplicationController
 
   def new
     @vinyl = Vinyl.new
+    authorize @vinyl
   end
 
   def create
-    @vinyl = Vinyl.new
+    @vinyl = Vinyl.new(vinyl_params)
+    @user = current_user
+    @vinyl.user = @user
+    @vinyl.year = nil if @vinyl.year.nil?
+    @vinyl.genre = "Unknown" if @vinyl.genre == ""
+    @vinyl.label = "Unknown" if @vinyl.label == ""
+    authorize @vinyl
     if @vinyl.save
       redirect_to vinyl_path(@vinyl)
     else
