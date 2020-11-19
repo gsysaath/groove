@@ -19,13 +19,6 @@
 
     <% @vinyls.each do |vinyl| %>
       <li class="card1">
-        <div data-video="TmUmNbQj8Uw"
-          data-autoplay="0"
-          data-loop="1"
-          id="youtube-audio">
-        </div>
-        <script src="iframe.js"></script>
-        <script src="youtube.js"></script>
         <%= link_to vinyl_path(vinyl), class: "card1-image" do %>
           <% if vinyl.name == "Jean Sebastien Bach 'Prestige de l'Orgue'" %>
             <%= image_tag "https://img.discogs.com/7udcJdpQTzsxguHoA4_8eok2ow0=/fit-in/600x574/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-10316093-1495203843-9587.jpeg.jpg" %>

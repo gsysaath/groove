@@ -29,7 +29,4 @@ function onYouTubeIframeAPIReady() {
             }
         }
     })
-    e.removeAttribute('id');
-    console.log("here");
-    console.log(e.id);
 }
