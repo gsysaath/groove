@@ -2,8 +2,11 @@ class VinylsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_vinyl, only: %i[show edit update destroy]
 
+  require "discogs"
+
   def index
     @vinyls = policy_scope(Vinyl)
+    @wrapper = Discogs::Wrapper.new("groove")
   end
 
   def show

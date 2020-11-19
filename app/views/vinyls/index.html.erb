@@ -1,3 +1,6 @@
+<% require 'open-uri' %>
+<% require 'nokogiri' %>
+
 <div class="banner border-bottom border-primary">
   <div class="d-flex align-items-end pl-3 pb-2">
     <h1>Explore Vinyls Collection</h1>
@@ -16,6 +19,30 @@
         <p><%= check_box_tag :price_per_day, class: "cb-price-per-day" %>  Price per Day</p>
         <p><%= check_box_tag :artist, class: "cb-artist" %>  Artist</p>
       </form>
+
+
+<% first_album_id = @wrapper.get_artist_releases("329937").releases.first.id %>
+<% url = "https://www.discogs.com/Manilla-Road-Invasion/master/323447" %>
+<% html_file = open(url).read %>
+<% html_doc = Nokogiri::HTML(html_file) %>
+<% html_doc.search('#page_content > div.body > div.image_gallery.image_gallery_large > a > span.thumbnail_center').each do |element| %>
+  <%= puts "testing #{element.attribute('href')}" %>
+<% end %>
+
+<!--
+        genre: "Rock",
+        label: "Motown",
+        quality: "Good",
+        price_per_day: 2.00,
+        user: user2,
+        dimension: dimensions1 -->
+
+      <p>Vinyl image: <%= @wrapper.get_artist_releases("329937").releases.first.id %></p>
+      <p>Vinyl year: <%= @wrapper.get_artist_releases("329937").releases.first.year %></p>
+      <p>Vinyl genre: <%= @wrapper.get_artist_releases("329937").releases.first.style %></p>
+      <p>Vinyl name: <%= @wrapper.get_artist_releases("329937").releases.first.title %></p>
+      <p>Artist name: <%= @wrapper.get_artist("329937").name %></p>
+
     <% @vinyls.each do |vinyl| %>
       <li class="card1">
         <%= link_to vinyl_path(vinyl), class: "card1-image" do %>
