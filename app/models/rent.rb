@@ -6,7 +6,7 @@ class Rent < ApplicationRecord
   validates :end_date, presence: true, if: :rental_is_possible?
 
   STATUS = ["pending approval", "rental to come", "currently renting", "previous rental", "canceled rental" ].freeze
-  validates :category, inclusion: { in: STATUS }
+  validates :status, inclusion: { in: STATUS }
 
   def rental_is_possible?
     if start_date >= end_date

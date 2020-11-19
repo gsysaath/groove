@@ -1,9 +1,6 @@
 class RentsController < ApplicationController
   before_action :set_vinyl, only: %i[new create]
 
-  # STATUS = %w[pending_approval rentals_to_come currently_renting previous_rentals].freeze
-  # validates :category, inclusion: { in: STATUS }
-
   def new
     @rent = Rent.new
     authorize @rent
@@ -15,6 +12,7 @@ class RentsController < ApplicationController
     @rent.price = '%.2f' % (@vinyl.price_per_day * number_of_days)
     @rent.user = current_user
     @rent.vinyl = @vinyl
+    @rent.status = "pending approval"
     authorize @rent
     if @rent.save
       flash[:notice] = "Your rental is confirmed!"
