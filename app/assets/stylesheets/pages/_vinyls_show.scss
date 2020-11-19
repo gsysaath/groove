@@ -13,8 +13,9 @@
 }
 
 .container-map {
-  height:400px;
+  height: 350px;
   width: 100%;
+  margin-top:20px;
 }
 
 .map {
@@ -34,6 +35,7 @@
   margin-top: 40px;
   padding: 16px;
   border-radius:3%;
+  position: relative;
 }
 
 .container h2 {

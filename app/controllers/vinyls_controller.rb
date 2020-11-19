@@ -1,6 +1,8 @@
 class VinylsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_vinyl, only: %i[show edit update destroy]
+  require 'open-uri'
+  require 'json'
 
   def index
     if search_params
@@ -13,7 +15,23 @@ class VinylsController < ApplicationController
   def show
     @vinyl = Vinyl.find(params[:id])
     authorize @vinyl
+    artist = @vinyl.artist
+    album = @vinyl.name
 
+    search = "#{artist} #{album}"
+    search = search.gsub(" ","%20")
+
+    url = "http://youtube-scrape.herokuapp.com/api/search?q=#{search}"
+    parse = JSON.parse(open(url).read)
+    i = 0;
+    id = 0
+    while id == 0
+      if parse["results"][i]["video"]
+        id = parse["results"][i]["video"]["id"]
+      end
+      i += 1;
+    end
+    @vinyl.image_url = id
     @user_id = @vinyl.user_id
     @user = User.find(@user_id)
     @markers = [{ lat: @user.latitude, lng: @user.longitude }]
