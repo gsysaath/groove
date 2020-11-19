@@ -189,47 +189,76 @@ Vinyl.create(name: "Live At Last",
 #             dimension: dimensions1
 #             )
 
-require 'open-uri'
-require 'nokogiri'
-require "discogs"
+# require 'open-uri'
+# require 'nokogiri'
+# require "discogs"
 
-def new_vinyl (artist_id)
-  quality = ['Poor', 'Good', 'New', 'Great']
-  price_per_day = [1, 1.25, 1.5, 1.75, 2]
-  dimensions1="33 Tours"
-  dimensions2="45 Tours"
-  dimension = [dimensions1, dimensions2]
+# require 'net/http'
+# require 'set'
+
+# def working_url?(url, max_redirects=1)
+#   response = nil
+#   seen = Set.new
+#   loop do
+#     url = URI.parse(url)
+#     break if seen.include? url.to_s
+#     break if seen.size > max_redirects
+#     seen.add(url.to_s)
+#     response = Net::HTTP.new(url.host, url.port).request_head(url.path)
+#     if response.kind_of?(Net::HTTPRedirection)
+#       url = response['location']
+#     else
+#       break
+#     end
+#   end
+#   response.kind_of?(Net::HTTPSuccess) && url.to_s
+# end
+
+# def new_vinyl (artist_id)
+#   quality = ['Poor', 'Good', 'New', 'Great']
+#   price_per_day = [1, 1.25, 1.5, 1.75, 2]
+#   dimensions1="33 Tours"
+#   dimensions2="45 Tours"
+#   dimension = [dimensions1, dimensions2]
 
 
-  wrapper = Discogs::Wrapper.new("My awesome web app")
+#   wrapper = Discogs::Wrapper.new("My awesome web app")
+#   if (wrapper.get_artist_releases(artist_id).releases.class != nil)
+#     p wrapper.get_artist_releases(artist_id).releases.first
+#     first_album_id = wrapper.get_artist_releases(artist_id).releases.first.id
+#     artist_name = wrapper.get_artist(artist_id).name
+#     vinyl_name = wrapper.get_artist_releases(artist_id).releases.first.title
+#     url_builder = "#{artist_name.split(" ").join('-')}-#{vinyl_name.split(" ").join('-')}"
+#     url = "https://www.discogs.com/#{url_builder}/master/#{first_album_id}"
+#     if (working_url?(url))
+#       html_file = open(url).read
+#       html_doc = Nokogiri::HTML(html_file)
+#       html_doc.search('#page_content > div.body > div.image_gallery.image_gallery_large > a > span.thumbnail_center > img').each do |element|
+#         @image_url = element.attribute('src')
+#       end
+#       html_doc.search('#page_content > div.body > div.profile > div:nth-child(3) > a').each do |element|
+#         @genre = element.text
+#       end
+#       html_doc.search('#r5355965 > td.label.has_header > a').each do |element|
+#         @label = element.text
+#       end
+#       Vinyl.create!(name: wrapper.get_artist_releases(artist_id).releases.first.title,
+#                 year: wrapper.get_artist_releases(artist_id).releases.first.year,
+#                 artist: wrapper.get_artist(artist_id).name,
+#                 genre: @genre,
+#                 label: @label,
+#                 quality: quality.sample,
+#                 price_per_day: price_per_day.sample,
+#                 user: @users.sample,
+#                 dimension: dimension.sample,
+#                 image_url: @image_url
+#                 )
+#     end
+#   else
+#     return nil
+#   end
+# end
 
-  first_album_id = wrapper.get_artist_releases(artist_id).releases.first.id
-  artist_name = wrapper.get_artist(artist_id).name
-  vinyl_name = wrapper.get_artist_releases(artist_id).releases.first.title
-  url_builder = "#{artist_name.split(" ").join('-')}-#{vinyl_name.split(" ").join('-')}"
-  url = "https://www.discogs.com/#{url_builder}/master/#{first_album_id}"
-  html_file = open(url).read
-  html_doc = Nokogiri::HTML(html_file)
-  html_doc.search('#page_content > div.body > div.image_gallery.image_gallery_large > a > span.thumbnail_center > img').each do |element|
-    @image_url = element.attribute('src')
-  end
-  html_doc.search('#page_content > div.body > div.profile > div:nth-child(3) > a').each do |element|
-    @genre = element.text
-  end
-  html_doc.search('#r5355965 > td.label.has_header > a').each do |element|
-    @label = element.text
-  end
-  Vinyl.create(name: wrapper.get_artist_releases(artist_id).releases.first.title,
-            year: wrapper.get_artist_releases(artist_id).releases.first.year,
-            artist: wrapper.get_artist(artist_id).name,
-            genre: @genre,
-            label: @label,
-            quality: quality.sample,
-            price_per_day: price_per_day.sample,
-            user: @users.sample,
-            dimension: dimension.sample,
-            image_url: @image_url
-            )
-end
-
-new_vinyl(1)
+# new_vinyl(1)
+# new_vinyl(2)
+# new_vinyl(3)

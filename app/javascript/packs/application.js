@@ -31,6 +31,7 @@ import { price } from "../vanilla/price";
 
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { onYouTubeIframeAPIReady } from '../plugins/init_youtube';
 
 document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('map')) {
@@ -40,6 +41,9 @@ document.addEventListener('turbolinks:load', () => {
   console.log("hello");
     price();
   }
+  // if (document.getElementById("youtube-audio")) {
+  //   onYouTubeIframeAPIReady()
+  // }
 })
 
 document.addEventListener('DOMContentLoaded', function() {
