@@ -27,6 +27,7 @@ require ("jquery_ujs")
 // External imports
 import "bootstrap";
 
+import "../plugins/flatpickr"
 
 import { price } from "../vanilla/price";
 
@@ -34,12 +35,21 @@ import { price } from "../vanilla/price";
 
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { onYouTubeIframeAPIReady } from '../plugins/init_youtube';
 
 document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('map')) {
     initMapbox();
   }
   if (document.querySelector(".rent_start_date")) {
+  console.log("hello");
     price();
   }
+  // if (document.getElementById("youtube-audio")) {
+  //   onYouTubeIframeAPIReady()
+  // }
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+  flatpickr('.startdate');
 })

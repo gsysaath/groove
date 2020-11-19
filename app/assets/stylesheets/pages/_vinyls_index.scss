@@ -14,13 +14,14 @@
 }
 
 .card1 {
+  position: relative;
   display: inline-block;
   width: 90%;
   max-width: 20rem;
   margin: 1rem 1rem 150px 1rem;
   font-size: 1rem;
   text-decoration: none;
-  box-shadow: 1px 2px 4px rgba(0,0,0,0.07);
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.7);
 }
 
 .card1-image {
