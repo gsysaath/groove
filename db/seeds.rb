@@ -10,12 +10,12 @@ Vinyl.destroy_all
 User.destroy_all
 
 
-user = User.create!(email: 'toto@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Georgito", last_name: "Yito", address: "84 boulevard massena, Paris")
-user1 = User.create!(email: 'toto1@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Martin", last_name: "Tran", address: "110 avenue de choisy, Paris")
-user2 = User.create!(email: 'toto2@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Olivier", last_name: "Calmels", address: "10 rue du mec perdu Paris")
-user3 = User.create!(email: 'toto3@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Amal", last_name: "Gouia", address: "10 rue du mec perdu Paris")
-user4 = User.create!(email: 'toto4@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Gerom", last_name: "Bretzel", address: "10 rue du mec perdu Paris")
-user5 = User.create!(email: 'toto5@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Alex", last_name: "Uchiwa", address: "10 rue du mec perdu Paris")
+user = User.create!(email: 'toto@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Georgito", last_name: "Yito", address: "2 Avenue Jean Jaurès, Pont de Choisy, 94600 Choisy-le-Roi")
+user1 = User.create!(email: 'toto1@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Martin", last_name: "Tran", address: "21 Rue de l'École de Médecine, 75006 Paris")
+user2 = User.create!(email: 'toto2@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Olivier", last_name: "Calmels", address: "68 Rue Mouffetard, 75005 Paris")
+user3 = User.create!(email: 'toto3@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Amal", last_name: "Gouia", address: "5 Rue Blainville, 75005 Paris")
+user4 = User.create!(email: 'toto4@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Gerom", last_name: "Bretzel", address: "18 Rue des Abbesses, 75018 Paris")
+user5 = User.create!(email: 'toto5@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Alex", last_name: "Uchiwa", address: "5 Place de la Nation, 75011 Paris")
 
 dimensions1="33 Tours"
 dimensions2="45 Tours"
