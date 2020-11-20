@@ -30,6 +30,18 @@
   margin-top: 7px;
   margin-right: 20px;
   margin-left: 20px;
+  &:active {
+    text-decoration:none!important;
+    box-shadow:none!important;
+  }
+  &:hover {
+    text-decoration:none!important;
+    box-shadow:none!important;
+  }
+  &:focus {
+    text-decoration:none!important;
+    box-shadow:none!important;
+  }
 }
 
 .btn-ghost:hover {

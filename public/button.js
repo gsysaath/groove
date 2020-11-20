@@ -1,6 +1,6 @@
 
-$('.button').click(function(){
-    var clickedButton = $(this);
-    this.remove();
-    $('.button-wrap').prepend(clickedButton);
-  });
+// $('.button').click(function(){
+//     var clickedButton = $(this);
+//     this.remove();
+//     $('.button-wrap').prepend(clickedButton);
+//   });

@@ -17,9 +17,9 @@
       <%= f.input :dimension, collection: [ "33 Tours", "45 Tours"] %>
       <%= f.input :price_per_day, input_html: { min: '0.5', step: '0.5' } %>
   </div>
-  <div class="col-12 pb-3 mb-3">
-      <%= f.input :photo, as: :file, class: "py-3 my-3" %>
-      <%= f.button :submit, class: "btn btn-outline-primary" %>
+  <div class="col-12 pb-2 mb-3">
+      <%= f.input :photo, as: :file, label: false, class: "py-3 my-3" %>
+      <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
