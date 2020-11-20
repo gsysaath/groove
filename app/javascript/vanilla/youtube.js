@@ -1,8 +1,13 @@
+import { iframe } from "./iframe";
+
 const youtube = () => {
+
   function onYouTubeIframeAPIReady() {
+    const YT = iframe();
     var e = document.querySelector("#youtube-audio"),
         t = document.createElement("img");
-
+    console.log(e);
+    console.log("after e");
     t.setAttribute("id", "youtube-icon"), t.style.cssText = "cursor:pointer;cursor:hand", e.appendChild(t);
     var a = document.createElement("div");
     a.setAttribute("id", "youtube-player"), e.appendChild(a);
@@ -30,6 +35,10 @@ const youtube = () => {
             }
         }
     })
+  }
+
+  if (document.querySelector("#youtube-audio")){
+    onYouTubeIframeAPIReady();
   }
 };
 
