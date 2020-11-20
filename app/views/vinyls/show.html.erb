@@ -91,8 +91,8 @@
 
             <div style=" margin: 0 auto;">
               <%= simple_form_for [@vinyl, @rent] do |f| %>
-                <%= f.input :start_date, as: :string, placeholder: 'Choose your date', required: true, input_html: {class: "datepicker", id:"rangestart"} %>
-                <%= f.input :end_date, as: :string, placeholder: 'Choose your date', required: true, input_html: {class: "datepicker", id:"rangeend"} %>
+                <%= f.input :start_date, as: :string, placeholder: 'Choose your date', required: false, input_html: {class: "datepicker", id:"rangestart"} %>
+                <%= f.input :end_date, as: :string, placeholder: 'Choose your date', required: false, input_html: {class: "datepicker", id:"rangeend"} %>
                 <%= f.button :submit, "Reserve", class: "btn btn-primary cta-book" %>
               <% end %>
               <hr>
