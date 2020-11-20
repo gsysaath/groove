@@ -73,14 +73,8 @@
                   <br> <%= '%.2f' % @vinyl.price_per_day %> €</li>
               </ul>
             </div>
-            <div data-video=<%= @vinyl.image_url %>
-              data-autoplay="0"
-              data-loop="1"
-              id="youtube-audio">
-            </div>
-            <script src="../iframe.js"></script>
-            <script src="../youtube.js"></script>
-
+            <input type="submit" value="Submit" id="submit">
+            <div id="player"></div>
           </div>
         </div>
       </div>
@@ -112,8 +106,23 @@
     </div>
 
 
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+    document.getElementById('submit').addEventListener('click', () => {
+        new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: "<%= @vinyl.image_url %>",
+            events: {
+                onReady: e => e.target.playVideo()
+            }
+        });
+    });
+</script>
   <!-- div map -->
 
 <!-- end container de la page -->
 </div>
+
 
