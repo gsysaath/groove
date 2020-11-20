@@ -5,7 +5,9 @@
 
 .info {
   width: 60%;
-
+  display: block;
+  align-items:center;
+  justify-content: center;
 }
 
 .book {
@@ -21,7 +23,7 @@
 .map {
   margin-bottom:30px;
   padding:0px;
-  height:100%;
+  height:379px;
   width: 100%;
 }
 
@@ -36,6 +38,8 @@
   padding: 16px;
   border-radius:3%;
   position: relative;
+  width: 100%;
+
 }
 
 .container h2 {
@@ -83,4 +87,9 @@ color: #50A2A7;
   box-shadow: 0 0 15px rgba(0,0,0,0.06);
   padding:20px;
   border-radius:3%;
+}
+
+
+#img-show > img {
+  width: 100%;
 }

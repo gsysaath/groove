@@ -8,7 +8,7 @@ class Vinyl < ApplicationRecord
   validates :dimension, presence: true
   validates :price_per_day, presence: true, numericality: true
 
-    include PgSearch::Model
+  include PgSearch::Model
   pg_search_scope :global_search,
     against: [ :name, :artist ],
     using: {

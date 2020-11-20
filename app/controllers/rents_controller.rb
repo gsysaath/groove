@@ -18,7 +18,7 @@ class RentsController < ApplicationController
       flash[:notice] = "Your rental is confirmed!"
       redirect_to dashboard_path
     else
-      render :new
+      redirect_to vinyl_path(@vinyl)
     end
   end
 

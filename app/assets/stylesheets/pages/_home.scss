@@ -46,7 +46,7 @@ html {
 
 body {
     color: var(--main-color);
-    background-color: white;
+    background-color: rgb(247, 244, 237);
     transition: all 1s ease-out;
     display: flex;
     flex-flow: column nowrap;
@@ -279,7 +279,7 @@ main > section {
 }
 
 .product-quote {
-    background-color: white;
+    background-color: transparent;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
