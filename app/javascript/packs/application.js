@@ -39,7 +39,7 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('map')) {
     initMapbox();
   }
-  if (document.querySelector(".rent_start_date")) {
+  if (document.querySelectorAll(".datepicker")) {
     price();
   }
   // if (document.getElementById("youtube-audio")) {
