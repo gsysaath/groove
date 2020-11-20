@@ -5,10 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+p "*************************"
+p "***  DB:SEED START !  ***"
+p "*************************"
+p "-------------"
+p "Models.destroy_all"
 Rent.destroy_all
 Vinyl.destroy_all
 User.destroy_all
-
+p "-------------"
+p "Users creation"
 
 user = User.create!(email: 'toto@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Georgito", last_name: "Yito", address: "2 Avenue Jean Jaurès, Pont de Choisy, 94600 Choisy-le-Roi")
 user1 = User.create!(email: 'toto1@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Martin", last_name: "Tran", address: "21 Rue de l'École de Médecine, 75006 Paris")
@@ -18,12 +25,15 @@ user4 = User.create!(email: 'toto4@yahoo.fr', password: 'abcdef', password_confi
 user5 = User.create!(email: 'toto5@yahoo.fr', password: 'abcdef', password_confirmation: 'abcdef', first_name: "Alex", last_name: "Uchiwa", address: "5 Place de la Nation, 75011 Paris")
 @users = [user1, user2, user3, user4, user5]
 
+p "-------------"
+p "Vinyls creation"
+
 dimensions1="33 Tours"
 dimensions2="45 Tours"
 
-Vinyl.create(name: "Highly Evolved",
-         year:"2017",
-         artist:"The Vines",
+vin_1 = Vinyl.create(name: "Highly Evolved",
+        year:"2017",
+        artist:"The Vines",
         genre: "Rock",
         label: "Motown",
         quality: "Good",
@@ -32,9 +42,9 @@ Vinyl.create(name: "Highly Evolved",
         dimension: dimensions1
       )
 
-Vinyl.create(name:"Jean Sebastien Bach 'Prestige de l'Orgue'",
-         year:"1970",
-         artist:"Helmut Walcha",
+vin_2 = Vinyl.create(name:"Jean Sebastien Bach 'Prestige de l'Orgue'",
+        year:"1970",
+        artist:"Helmut Walcha",
         genre: "Classic",
         label: "Deutsche Grammophon Collection",
         quality: "Good",
@@ -44,9 +54,9 @@ Vinyl.create(name:"Jean Sebastien Bach 'Prestige de l'Orgue'",
       )
 
 
-Vinyl.create(name: "Moral Panic",
-         year:"2020",
-         artist:"Nothing But Thieves",
+vin_3 = Vinyl.create(name: "Moral Panic",
+        year:"2020",
+        artist:"Nothing But Thieves",
         genre: "Rock",
         label: "Sony Music",
         quality: "New",
@@ -56,9 +66,9 @@ Vinyl.create(name: "Moral Panic",
       )
 
 
-Vinyl.create(name: "The Temple Of I & I",
-         year:"2017",
-         artist:"Thievery Corporation",
+vin_4 = Vinyl.create(name: "The Temple Of I & I",
+        year:"2017",
+        artist:"Thievery Corporation",
         genre: "Electronic",
         label: "Eighteenth Street Lounge Music",
         quality: "Good",
@@ -67,9 +77,9 @@ Vinyl.create(name: "The Temple Of I & I",
         dimension: dimensions2
       )
 
-Vinyl.create(name: "I'm In You",
-         year:"1977",
-         artist:"Peter Frampton",
+vin_5 =Vinyl.create(name: "I'm In You",
+        year:"1977",
+        artist:"Peter Frampton",
         genre: "Rock",
         label: "A&M Records",
         quality: "New",
@@ -78,9 +88,9 @@ Vinyl.create(name: "I'm In You",
         dimension: dimensions1
       )
 
-Vinyl.create(name: "More Miles Per Hour",
-         year:"1979",
-         artist:"John Miles",
+vin_6 =Vinyl.create(name: "More Miles Per Hour",
+        year:"1979",
+        artist:"John Miles",
         genre: "Rock",
         label: "Decca",
         quality: "Poor",
@@ -89,9 +99,9 @@ Vinyl.create(name: "More Miles Per Hour",
         dimension: dimensions1
       )
 
-Vinyl.create(name: "Nightwatch",
-         year:"1978",
-         artist:"Kenny Loggins",
+vin_7 =Vinyl.create(name: "Nightwatch",
+        year:"1978",
+        artist:"Kenny Loggins",
         genre: "Rock",
         label: "Columbia",
         quality: "Very Good",
@@ -100,9 +110,9 @@ Vinyl.create(name: "Nightwatch",
         dimension: dimensions2
       )
 
-Vinyl.create(name: "Love's A Liar",
-         year:"1987",
-         artist:"Martee Lebow",
+vin_8 =Vinyl.create(name: "Love's A Liar",
+        year:"1987",
+        artist:"Martee Lebow",
         genre: "Rock",
         label: "Atlantic",
         quality: "Great",
@@ -111,7 +121,7 @@ Vinyl.create(name: "Love's A Liar",
         dimension: dimensions1
       )
 
-Vinyl.create(name: "Let It Be",
+vin_9 =Vinyl.create(name: "Let It Be",
             year: "1986",
             artist: "The Beatles",
             genre: "Rock",
@@ -122,7 +132,7 @@ Vinyl.create(name: "Let It Be",
             dimension: dimensions1
             )
 
-Vinyl.create(name: "En Elsker",
+vin_10 =Vinyl.create(name: "En Elsker",
             year: "1986",
             artist: "Marquis De Sade, Anne Linnet",
             genre: "Rock",
@@ -177,7 +187,185 @@ Vinyl.create(name: "Live At Last",
             user: user4,
             dimension: dimensions1
             )
+p "-------------"
+p "*************************"
+p "******  Demo USER  ******"
+p "*************************"
 
+############### Seeds USER for Demo ###################
+# Users Vinyls
+p "-------------"
+p "Demo USER's Vinyls creation"
+vin_20 = Vinyl.create(name: "Highly Evolved",
+            year:"2017",
+            artist:"The Vines",
+            genre: "Rock",
+            label: "Motown",
+            quality: "Good",
+            price_per_day: 2.00,
+            user: user,
+            dimension: dimensions1
+      )
+
+vin_21 = Vinyl.create(name: "Live At Last",
+            year: "1977",
+            artist: "Bette Midler",
+            genre: "Jazz",
+            label: "Atlantic",
+            quality: "Poor",
+            price_per_day: 0.50,
+            user: user,
+            dimension: dimensions1
+            )
+
+vin_22 = Vinyl.create(name: "Lifeline",
+            year: "1976",
+            artist: "Pablo Cruise",
+            genre: "Rock",
+            label: "A&M Records",
+            quality: "Good",
+            price_per_day: 1.00,
+            user: user,
+            dimension: dimensions1
+            )
+            
+# User's vinyls under rentals
+p "-------------"
+p "Demo USER's vinyls under rentals: Rents creation"
+
+Rent.create(
+  price: 50,
+  start_date: Date.today + 15 ,
+  end_date: Date.today + 20,
+  vinyl: vin_20,
+  user: user2,
+  status: "pending approval"
+)
+
+Rent.create(
+  price: 38,
+  start_date: Date.today + 2 ,
+  end_date: Date.today + 30,
+  vinyl: vin_21,
+  user: user4,
+  status: "rental to come"
+)
+
+Rent.create(
+  price: 120.5,
+  start_date: Date.today - 60,
+  end_date: Date.today - 20,
+  vinyl: vin_22,
+  user: user3,
+  status: "previous rental"
+)
+
+
+
+# User's rentals
+p "-------------"
+p "Demo USER's rentals: Rents creation"
+Rent.create(
+  price: 52.50,
+  start_date: Date.today + 15 ,
+  end_date: Date.today + 20,
+  vinyl: vin_1,
+  user: user,
+  status: "pending approval"
+)
+
+Rent.create(
+  price: 86,
+  start_date: Date.today + 40 ,
+  end_date: Date.today + 60,
+  vinyl: vin_2,
+  user: user,
+  status: "pending approval"
+)
+
+Rent.create(
+  price: 38,
+  start_date: Date.today + 2 ,
+  end_date: Date.today + 30,
+  vinyl: vin_3,
+  user: user,
+  status: "rental to come"
+)
+
+Rent.create(
+  price: 5,
+  start_date: Date.today + 6,
+  end_date: Date.today + 8,
+  vinyl: vin_4,
+  user: user,
+  status: "rental to come"
+)
+
+Rent.create(
+  price: 12,
+  start_date: Date.today - 10 ,
+  end_date: Date.today + 12,
+  vinyl: vin_5,
+  user: user,
+  status: "currently renting"
+)
+
+Rent.create(
+  price: 26.75,
+  start_date: Date.today - 25,
+  end_date: Date.today + 3,
+  vinyl: vin_6,
+  user: user,
+  status: "currently renting"
+)
+
+Rent.create(
+  price: 135.75,
+  start_date: Date.today - 90,
+  end_date: Date.today - 10,
+  vinyl: vin_7,
+  user: user,
+  status: "previous rental"
+)
+
+Rent.create(
+  price: 120.5,
+  start_date: Date.today - 60,
+  end_date: Date.today - 20,
+  vinyl: vin_8,
+  user: user,
+  status: "previous rental"
+)
+
+Rent.create(
+  price: 120.5,
+  start_date: Date.today - 60,
+  end_date: Date.today - 20,
+  vinyl: vin_9,
+  user: user,
+  status: "previous rental"
+)
+
+Rent.create(
+  price: 92,
+  start_date: Date.today - 60,
+  end_date: Date.today - 20,
+  vinyl: vin_10,
+  user: user,
+  status: "previous rental"
+)
+
+p "-------------"
+p "*************************"
+p "****  DB:SEED END !  ****"
+p "*************************"
+
+# ["pending approval", "rental to come", "currently renting", "previous rental", "canceled rental" ]
+            
+
+
+
+            
 # Vinyl.create(name: "",
 #             year: "",
 #             artist: "",

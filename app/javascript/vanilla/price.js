@@ -2,7 +2,9 @@ const price = () => {
   const card = document.querySelector(".card-book");
 
   if (card){
-
+    const priceTotal = document.querySelector(".price-total");
+    const priceDay = document.querySelector(".price-per-day");
+    const rents = document.querySelectorAll(".datepicker");
     card.addEventListener("change", (event) => {
       const priceTotal = document.querySelector(".price-total");
       const priceDay = document.querySelector(".price-per-day");
@@ -17,6 +19,9 @@ const price = () => {
       priceTotal.innerText = 0;
       console.log (difDays);
     })
+  }
+
+
   }
 
 

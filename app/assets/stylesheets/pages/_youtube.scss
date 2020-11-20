@@ -1,4 +1,22 @@
-#youtube-icon {
-  width: 30px;
+#player {
+  margin-top:20px;
+  margin-bottom: 10px!important;
+  width: 100%;
+  height: auto;
   justify-content:left;
+  display:none;
+}
+
+#submit {
+  &:hover {
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+#submit2 {
+  &:hover {
+    font-size: 16px;
+    cursor: pointer;
+  }
 }

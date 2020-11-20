@@ -63,14 +63,9 @@
                 <li><i class="fas fa-hashtag card-label"></i><strong class="card-label">   Label: </strong>
                   <br> <%= @vinyl.label %>  </li>
 
-                  <li><i class="fas fa-headphones-alt card-label"></i><strong class="card-label">  Listen to an extract</strong>
-                    <div data-video=<%= @vinyl.image_url %>
-                      data-autoplay="0"
-                      data-loop="1"
-                      id="youtube-audio">
-                    </div>
-                    <script src="../iframe.js"></script>
-                    <script src="../youtube.js"></script>
+                  <li><strong id="submit"><i class="fas fa-headphones-alt card-label"></i>  Listen</strong>       <br>  <strong id="submit2"><i class="far fa-stop-circle card-label"></i>  Stop</strong>
+                  <div id="player"></div>
+
                   </li>
               </ul>
             </div>
@@ -88,7 +83,6 @@
               </ul>
             </div>
 
-
           </div>
         </div>
       </div>
@@ -104,11 +98,10 @@
                 <%= f.button :submit, "Reserve", class: "btn btn-primary cta-book" %>
               <% end %>
               <hr>
-              <h4 class="text-center">Total : <span class="price-total"><%= '%.2f' % @vinyl.price_per_day %></span>€</h4>
+              <h4 class="text-center">Total : <span class="price-total">0</span>€</h4>
             </div>
           </div>
 
-          <!-- divmap -->
         <div class="container-map">
           <div id="map"
             class="map"
@@ -117,10 +110,26 @@
           </div>
         </div>
       </div>
-
-<!-- end info-book -->
     </div>
-
-<!-- end container de la page -->
 </div>
 
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+    document.getElementById('submit').addEventListener('click', () => {
+        player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: "<%= @vinyl.image_url %>",
+            events: {
+                onReady: e => e.target.playVideo(),
+            }
+        });
+    });
+    function stopVideo(player) {
+        player.stopVideo();
+      }
+    document.getElementById('submit2').addEventListener('click', () => {
+        stopVideo(player);
+    });
+</script>
