@@ -29,29 +29,43 @@
 
 .card-product-infos {
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.06);
+  box-shadow: 0 0 15px rgba(0,0,0,0.09);
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 50px;
   margin-top: 40px;
-  padding: 16px;
+  padding: 20px;
   border-radius:3%;
-  position: relative;
   width: 100%;
+  background-color: #F7F4EF;
+  // justify-content: space-between;
+}
 
+.ul1 {
+  width:20%;
+ }
+
+.ul2 {
+  width:30%;
+ }
+
+.ul3 {
+  width:20%;
 }
 
 .container h2 {
   font-weight: bold;
   margin-bottom: 2rem;
+  font-size: 20px;
+
 }
 
 .container h1 {
   text-align: left;
-  font-weight: 300;
   line-height: 1.5;
   margin-bottom: 1rem;
+  margin-top: 40px;
+  font-size: 30px;
  }
 
 .card-product p {
@@ -70,6 +84,7 @@ color: #50A2A7;
 
 .card-product-infos li{
   margin-bottom:10px;
+  overflow:hidden;
 }
 .card-product-infos ul {
   list-style: none;
@@ -87,9 +102,15 @@ color: #50A2A7;
   box-shadow: 0 0 15px rgba(0,0,0,0.06);
   padding:20px;
   border-radius:3%;
+  background-color: #F7F4EF;
 }
 
 
 #img-show > img {
   width: 100%;
 }
+
+.card-label  {
+  text-overflow: ellipsis;
+}
+

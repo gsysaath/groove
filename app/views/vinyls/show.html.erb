@@ -48,38 +48,46 @@
           <div class="card-product-infos">
             <!-- div 1er ul -->
             <div class="ul1">
-             <ul>
-              <li><strong class="card-label">Year:
+             <ul class="ul1-list">
+              <li><i class="far fa-calendar card-label"></i><strong class="card-label">   Year:
                 <br></strong><%= @vinyl.year %>  </li>
-              <li><strong class="card-label">Genre:
+
+              <li><i class="fas fa-music card-label"></i><strong class="card-label">   Genre:
                 <br></strong><%= @vinyl.genre %>  </li>
+
               </ul>
             </div>
             <!-- div 2em ul -->
             <div class="ul2">
-              <ul>
-                <li><strong class="card-label">Label: </strong>
+              <ul class="ul2-list">
+                <li><i class="fas fa-hashtag card-label"></i><strong class="card-label">   Label: </strong>
                   <br> <%= @vinyl.label %>  </li>
-                <li><strong class="card-label">Quality:
-                  <br> </strong><%= @vinyl.quality %>  </li>
+
+                  <li><i class="fas fa-headphones-alt card-label"></i><strong class="card-label">  Listen to an extract</strong>
+                    <div data-video=<%= @vinyl.image_url %>
+                      data-autoplay="0"
+                      data-loop="1"
+                      id="youtube-audio">
+                    </div>
+                    <script src="../iframe.js"></script>
+                    <script src="../youtube.js"></script>
+                  </li>
               </ul>
             </div>
              <!-- div 2em ul -->
             <div class="ul3">
-              <ul>
-                <li><strong class="card-label">Dimension: </strong>
+              <ul class="ul3-list">
+                <li><i class="fas fa-compact-disc card-label"></i><strong class="card-label">   Dimension: </strong>
                   <br> <%= @vinyl.dimension %>  </li>
-                <li><i class="far fa-money-bill-alt card-label"></i><strong class="card-label"> Price per day: </strong>
-                  <br> <%= '%.2f' % @vinyl.price_per_day %> €</li>
+
+<!--                 <li><i class="far fa-money-bill-alt card-label"></i><strong class="card-label"> Price per day: </strong>
+                  <br> <%= '%.2f' % @vinyl.price_per_day %> €</li> -->
+                <li><i class="fas fa-certificate card-label"></i><strong class="card-label">   Quality:
+                  <br> </strong><%= @vinyl.quality %>  </li>
+
               </ul>
             </div>
-            <div data-video=<%= @vinyl.image_url %>
-              data-autoplay="0"
-              data-loop="1"
-              id="youtube-audio">
-            </div>
-            <script src="../iframe.js"></script>
-            <script src="../youtube.js"></script>
+
 
           </div>
         </div>
@@ -99,6 +107,8 @@
               <h4 class="text-center">Total : <span class="price-total"><%= '%.2f' % @vinyl.price_per_day %></span>€</h4>
             </div>
           </div>
+
+          <!-- divmap -->
         <div class="container-map">
           <div id="map"
             class="map"
@@ -110,9 +120,6 @@
 
 <!-- end info-book -->
     </div>
-
-
-  <!-- div map -->
 
 <!-- end container de la page -->
 </div>
