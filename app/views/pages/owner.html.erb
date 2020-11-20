@@ -6,14 +6,14 @@
 
 <ul class="list-inline tabs-underlined">
   <li>
-    <a href="#" class="tab-underlined active">Rentals</a>
+    <a href="/dashboard" class="tab-underlined">Rentals</a>
   </li>
   <li>
-    <a href="dashboard/owner" class="tab-underlined">My vinyls</a>
+    <a href="dashboard/owner" class="tab-underlined active">My vinyls</a>
   </li>
 </ul>
 
-<div>
+<!-- <div>
   <% if flash[:notice] %>
     <div class="notice alert alert-info"><%= flash[:notice] %></div>
   <% end %>
@@ -21,7 +21,7 @@
 
 <div class="dash-main col-10">
   <div class="board">
-    <h3  class="dashtitle">Pending approval</h3>
+    <h3  class="dashtitle">Pending your approval</h3>
     <br>
     <div class="button-wrap mr-5">
       <% @rents_pending.select do |rent| %>
@@ -86,4 +86,12 @@
 </div>
 
 <script src="button.js" >
-</script>
+</script> -->
+
+<ul>
+  <% @owned_vinyls.each do |vinyl| %>
+    <li>
+      <%= vinyl.name  %>
+    </li>
+  <% end %>
+</ul>

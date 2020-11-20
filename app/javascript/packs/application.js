@@ -28,14 +28,22 @@ import "bootstrap";
 import "../plugins/flatpickr"
 import { price } from "../vanilla/price";
 import { youtube } from "../vanilla/youtube";
+import { $ } from 'jquery';
 
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 
 // import { cardify } from "../vanilla/dashboard_card"
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { cardify } from '../vanilla/dashboard_card';
+
 
 document.addEventListener('turbolinks:load', () => {
+
+  if (document.querySelector(".board")) {
+    cardify();
+  }
+
   initMapbox();
   price();
   flatpickr("#rangestart", {
