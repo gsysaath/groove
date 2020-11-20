@@ -48,33 +48,41 @@
           <div class="card-product-infos">
             <!-- div 1er ul -->
             <div class="ul1">
-             <ul>
-              <li><strong class="card-label">Year:
+             <ul class="ul1-list">
+              <li><i class="far fa-calendar card-label"></i><strong class="card-label">   Year:
                 <br></strong><%= @vinyl.year %>  </li>
-              <li><strong class="card-label">Genre:
+
+              <li><i class="fas fa-music card-label"></i><strong class="card-label">   Genre:
                 <br></strong><%= @vinyl.genre %>  </li>
+
               </ul>
             </div>
             <!-- div 2em ul -->
             <div class="ul2">
-              <ul>
-                <li><strong class="card-label">Label: </strong>
+              <ul class="ul2-list">
+                <li><i class="fas fa-hashtag card-label"></i><strong class="card-label">   Label: </strong>
                   <br> <%= @vinyl.label %>  </li>
-                <li><strong class="card-label">Quality:
-                  <br> </strong><%= @vinyl.quality %>  </li>
+
+                  <li><strong id="submit"><i class="fas fa-headphones-alt card-label"></i>  Listen</strong>       <br>  <strong id="submit2"><i class="far fa-stop-circle card-label"></i>  Stop</strong>
+                  <div id="player"></div>
+
+                  </li>
               </ul>
             </div>
              <!-- div 2em ul -->
             <div class="ul3">
-              <ul>
-                <li><strong class="card-label">Dimension: </strong>
+              <ul class="ul3-list">
+                <li><i class="fas fa-compact-disc card-label"></i><strong class="card-label">   Dimension: </strong>
                   <br> <%= @vinyl.dimension %>  </li>
-                <li><i class="far fa-money-bill-alt card-label"></i><strong class="card-label"> Price per day: </strong>
-                  <br> <%= '%.2f' % @vinyl.price_per_day %> €</li>
+
+<!--                 <li><i class="far fa-money-bill-alt card-label"></i><strong class="card-label"> Price per day: </strong>
+                  <br> <%= '%.2f' % @vinyl.price_per_day %> €</li> -->
+                <li><i class="fas fa-certificate card-label"></i><strong class="card-label">   Quality:
+                  <br> </strong><%= @vinyl.quality %>  </li>
+
               </ul>
             </div>
-            <input type="submit" value="Submit" id="submit">
-            <div id="player"></div>
+
           </div>
         </div>
       </div>
@@ -90,9 +98,10 @@
                 <%= f.button :submit, "Reserve", class: "btn btn-primary cta-book" %>
               <% end %>
               <hr>
-              <h4 class="text-center">Total : <span class="price-total"><%= '%.2f' % @vinyl.price_per_day %></span>€</h4>
+              <h4 class="text-center">Total : <span class="price-total">0</span>€</h4>
             </div>
           </div>
+
         <div class="container-map">
           <div id="map"
             class="map"
@@ -101,28 +110,26 @@
           </div>
         </div>
       </div>
-
-<!-- end info-book -->
     </div>
-
+</div>
 
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
     document.getElementById('submit').addEventListener('click', () => {
-        new YT.Player('player', {
+        player = new YT.Player('player', {
             height: '390',
             width: '640',
             videoId: "<%= @vinyl.image_url %>",
             events: {
-                onReady: e => e.target.playVideo()
+                onReady: e => e.target.playVideo(),
             }
         });
     });
+    function stopVideo(player) {
+        player.stopVideo();
+      }
+    document.getElementById('submit2').addEventListener('click', () => {
+        stopVideo(player);
+    });
 </script>
-  <!-- div map -->
-
-<!-- end container de la page -->
-</div>
-
-
