@@ -22,9 +22,6 @@ const price = () => {
   }
 
 
-  }
-
-
 }
 
 export { price }
