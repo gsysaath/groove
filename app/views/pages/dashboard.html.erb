@@ -40,11 +40,13 @@
 
   <div class="board">
     <h3 class="dashtitle">Rentals to come</h3>
-    <div class="button-wrap">
+    <br>
+    <div class="button-wrap mr-5">
       <% @rents_to_come.each do |rent| %>
         <div class="button yellow">
           <%= link_to vinyl_path(rent.vinyl), class: "dashlink"  do%>
             <%= rent.vinyl.name %><hr>
+            <%= image_tag "https://cdn.pixabay.com/photo/2012/04/11/12/05/disc-inside-27800_1280.png", width: 75, height: 75 %> <hr>
             There is <%= (rent.end_date - Time.now).fdiv(86400).to_i + 1 %> Days left <hr>
             Owner is <%= rent.vinyl.user.first_name %> <%= rent.vinyl.user.last_name %> <hr>
             You paid : <%= '%.2f' % rent.price %>€
@@ -55,11 +57,13 @@
   </div>
   <div class="board">
     <h3 class="dashtitle">Currently renting</h3>
-    <div class="button-wrap">
+    <br>
+    <div class="button-wrap mr-5">
       <% @rents_current.each do |rent| %>
         <div class="button green">
           <%= link_to vinyl_path(rent.vinyl), class: "dashlink"  do%>
             <%= rent.vinyl.name %><hr>
+            <%= image_tag "https://cdn.pixabay.com/photo/2012/04/11/12/05/disc-inside-27800_1280.png", width: 75, height: 75 %> <hr>
             There is <%= (rent.end_date - Time.now).fdiv(86400).to_i + 1 %> Days left <hr>
             Owner is <%= rent.vinyl.user.first_name %> <%= rent.vinyl.user.last_name %> <hr>
             You paid : <%= '%.2f' % rent.price %>€
@@ -70,11 +74,13 @@
   </div>
   <div class="board">
     <h3 class="dashtitle">Previous rentals</h3>
-    <div class="button-wrap">
+    <br>
+    <div class="button-wrap mr-5">
       <% @rents_previous.each do |rent| %>
         <div class="button violet">
           <%= link_to vinyl_path(rent.vinyl), class: "dashlink"  do%>
             <%= rent.vinyl.name %><hr>
+            <%= image_tag "https://cdn.pixabay.com/photo/2012/04/11/12/05/disc-inside-27800_1280.png", width: 75, height: 75 %> <hr>
             There is <%= (rent.end_date - Time.now).fdiv(86400).to_i + 1 %> Days left <hr>
             Owner is <%= rent.vinyl.user.first_name %> <%= rent.vinyl.user.last_name %> <hr>
             You paid : <%= '%.2f' % rent.price %>€
