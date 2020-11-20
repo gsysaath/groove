@@ -28,31 +28,32 @@ import "bootstrap";
 import "../plugins/flatpickr"
 import { price } from "../vanilla/price";
 import { youtube } from "../vanilla/youtube";
-import { iframe } from "../vanilla/iframe";
 import { $ } from 'jquery';
+
+import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
+
+// import { cardify } from "../vanilla/dashboard_card"
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { cardify } from '../vanilla/dashboard_card';
 
 
 document.addEventListener('turbolinks:load', () => {
+
   if (document.querySelector(".board")) {
     cardify();
   }
-  if (document.getElementById('map')) {
-    initMapbox();
-  }
-  if (document.querySelector(".card-book")) {
-    price();
-    flatpickr('.startdate');
-    iframe();
-    youtube();
-  }
+
+  initMapbox();
+  price();
+  flatpickr("#rangestart", {
+    altInput: true,
+    plugins: [new rangePlugin({ input: "#rangeend"})],
+    minDate: "today",
+  });
+    // youtube();
   // if (document.getElementById("youtube-audio")) {
   //   onYouTubeIframeAPIReady()
   // }
-  window.onerror = function() {
-    location.reload(true);
-  }
 })
 

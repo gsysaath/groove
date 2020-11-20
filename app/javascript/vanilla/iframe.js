@@ -1,11 +1,14 @@
 const iframe = () => {
+
   if (!window['YT']) {
+    console.log("1st iframe");
     var YT = {
         loading: 0,
         loaded: 0
     };
   }
   if (!window['YTConfig']) {
+    console.log("2nd iframe");
       var YTConfig = {
           'host': 'https://www.youtube.com'
       };
@@ -14,6 +17,7 @@ const iframe = () => {
       YT.loading = 1;
       (function() {
           var l = [];
+          console.log("loading");
           YT.ready = function(f) {
               if (YT.loaded) {
                   f();
@@ -52,6 +56,7 @@ const iframe = () => {
           b.parentNode.insertBefore(a, b);
       })();
   }
+  return YT;
 };
 
 export { iframe }

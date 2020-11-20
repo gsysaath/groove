@@ -9,7 +9,7 @@
       <%= f.input :name %>
       <%= f.input :artist %>
       <%= f.input :year, collection: 1948..2020 %>
-      <%= f.input :genre, collection: ["Pop", "Rock", "Electro", "Classic", "Raggae", "TECHNOMASTER" ] %>
+      <%= f.input :genre, collection: ["Pop", "Rock", "Electro", "Classic", "Raggae", "TECHNOMAESTER" ] %>
   </div>
   <div class="col-6">
       <%= f.input :label %>
@@ -19,7 +19,7 @@
   </div>
   <div class="col-12 pb-2 mb-3">
       <%= f.input :photo, as: :file, label: false, class: "py-3 my-3" %>
-      <%= f.button :submit, class: "btn btn-primary" %>
+      <%= f.button :submit, class: "btn btn-primary cta-sub" %>
     <% end %>
   </div>
 </div>

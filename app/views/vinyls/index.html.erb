@@ -5,7 +5,7 @@
 </div>
 
     <h2 class="display-2 showh2">Browse</h2>
-      <h4>S E A R CH</h4>
+      <h4>S E A R C H</h4>
       <form novalidate="novalidate" id="searchbar" class="simple_form search w-75" action="/vinyls" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
         <div class="search-form-control form-group">
           <input class="form-control string required" type="text" name="search[query]" id="search_query" />
@@ -57,6 +57,7 @@
         <%= link_to vinyl_path(vinyl), class: "card1-description" do %>
           <h2><%= vinyl.name.upcase %></h2>
           <p><%= vinyl.artist %></p>
+          <br>
         <% end %>
       </li>
     <% end %>
