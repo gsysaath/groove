@@ -3,7 +3,7 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgba(255,255,255,0.9);
   z-index: 10;
   padding-bottom: 0px!important;
   box-shadow: 1px 1px 3px rgba(230,230,230,0.9);
@@ -119,6 +119,21 @@
 
 .allourvinyl {
   border: none!important;
+  &:active {
+    text-decoration:none!important;
+    border: none!important;
+    box-shadow:none!important;
+  }
+  &:hover {
+    text-decoration:none!important;
+    border: none!important;
+    box-shadow:none!important;
+  }
+  &:focus {
+    text-decoration:none!important;
+    border: none!important;
+    box-shadow:none!important;
+  }
 }
 
 
