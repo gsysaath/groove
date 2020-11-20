@@ -1,11 +1,13 @@
 const cardify = () => {
   $('.button').click(function(){
-    console.log('it works')
     var clickedButton = $(this);
+    var parent_col = this.parentNode;
+    // element.classList.add("clicked");
+    console.log(clickedButton)
     this.remove();
-    $('.button-wrap').prepend(clickedButton);
+    $(parent_col).prepend(clickedButton);
+    // element.classList.remove("clicked");
   });
-
 }
 
 export { cardify }
