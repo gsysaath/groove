@@ -337,14 +337,14 @@ Rent.create(
   status: "pending approval"
 )
 
-Rent.create(
-  price: 120.5,
-  start_date: Date.today - 60,
-  end_date: Date.today - 20,
-  vinyl: vin_9,
-  user: user,
-  status: "pending approval"
-)
+# Rent.create(
+#   price: 120.5,
+#   start_date: Date.today - 60,
+#   end_date: Date.today - 20,
+#   vinyl: vin_9,
+#   user: user,
+#   status: "pending approval"
+# )
 
 Rent.create(
   price: 92,
