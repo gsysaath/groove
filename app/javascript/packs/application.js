@@ -29,13 +29,16 @@ import "../plugins/flatpickr"
 import { price } from "../vanilla/price";
 import { youtube } from "../vanilla/youtube";
 import { iframe } from "../vanilla/iframe";
-
-// import { cardify } from "../vanilla/dashboard_card"
-
+import { $ } from 'jquery';
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { cardify } from '../vanilla/dashboard_card';
+
 
 document.addEventListener('turbolinks:load', () => {
+  if (document.querySelector(".board")) {
+    cardify();
+  }
   if (document.getElementById('map')) {
     initMapbox();
   }
@@ -50,6 +53,6 @@ document.addEventListener('turbolinks:load', () => {
   // }
   window.onerror = function() {
     location.reload(true);
-}
+  }
 })
 

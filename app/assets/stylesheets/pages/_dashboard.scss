@@ -26,16 +26,16 @@
     &:hover {
       .button {
         &:nth-of-type(1){
-          transform:translate(-30px,-30px);
+          transform:translate(0px,60px);
         }
         &:nth-of-type(2){
-          transform:translate(-10px,-10px);
+          transform:translate(0px,10px);
         }
         &:nth-of-type(3){
-          transform:translate(10px,10px);
+          transform:translate(0px,-10px);
         }
         &:nth-of-type(4){
-          transform:translate(30px,30px);
+          transform:translate(0px,-60px);
         }
       }
     }
@@ -83,18 +83,18 @@
       }
       &:nth-of-type(2) {
         z-index:3;
-        left:5px;
-        top:5px;
+        left:10px;
+        top:-30px;
       }
       &:nth-of-type(3) {
         z-index:2;
-        left:10px;
-        top:10px;
+        left:20px;
+        top:-60px;
       }
       &:nth-of-type(4) {
         z-index:1;
-        left:15px;
-        top:15px;
+        left:30px;
+        top:-90px;
         box-shadow:none;
       }
     }
