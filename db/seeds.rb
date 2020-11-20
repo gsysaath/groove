@@ -334,7 +334,7 @@ Rent.create(
   end_date: Date.today - 20,
   vinyl: vin_8,
   user: user,
-  status: "previous rental"
+  status: "pending approval"
 )
 
 Rent.create(
@@ -343,7 +343,7 @@ Rent.create(
   end_date: Date.today - 20,
   vinyl: vin_9,
   user: user,
-  status: "previous rental"
+  status: "pending approval"
 )
 
 Rent.create(
